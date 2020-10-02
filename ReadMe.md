@@ -14,9 +14,8 @@ MVP:
 The questions archive should contain a series of questions which have:
 - Question
 - Correct Answer
-- Incorrect Answers
-- There should be 3 so that each question is a multiple choice question with 4 choices.
-- A difficulty level (easy, medium, hard for example)
+- Incorrect Answers (there should be 3 so that each question is a multiple choice question with 4 choices).
+- A difficulty level (easy, medium, hard)
 - A Topic (history, geography, literature, et cetera)
 
 
@@ -56,6 +55,6 @@ Advanced Extensions:
 
 1 - Highlight if the question has been used already in a  quiz, if so, when this was and/or how many quizzes the question has been used in.
 
-2 - Add selectable filters for exclusion of questions which have already been used in a prior quiz when generating a quiz.or to only include questions on a given topic.
+2 - Add selectable filters for exclusion of questions which have already been used in a prior quiz when generating a quiz or to only include questions on a given topic.
 
 3 - Allow True/False questions to be added to the database as their own question type with parallel functionality to the 4x multiple choice questions.
