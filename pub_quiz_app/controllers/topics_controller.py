@@ -6,14 +6,48 @@ import repositories.topic_repository as topic_repository
 topic_blueprint = Blueprint("topic", __name__)
 
 #index
+@topics_blueprint.route("/topics")
+def topics():
+    topics = topic_repository.select_all()
+    return render_template("topics/index.html", topics=topics)
 
-#new
+#new - formatting this from prior example is causing overlap - refactor tomorrow when brain power is higher.
+# @topics_blueprint.route("topics/new")
+# def new_topic():
+#     all_topics = topic_repository.select_all()
+#     return render_template("topics/new.html", topics=topics)
 
 #create
+@topics_blueprint.route("topics", methods=["POST"])
+def create_topic():
+    topic = request.form["topic"]
+    new_topic = Topic(topic)
+    topic_repository.save(new_topic)
+    return redirect("/topics")
+
 
 #edit
+@topics_blueprint.route("topics/<id>/edit")
+def edit_topic(id):
+    topic = topic_repository.select(id)
+    return render_template('topics/edit.html', topic=topic)
+
 
 #update
+@topics_blueprint.route("/topics/<id>", methods = ["POST"])
+def update_topic(id):
+    topic = request.form["topic"]
+    topic = Topic(topic, id)
+    topic_repository.update(topic)
+    return redirect("/topics")
+
 
 #delete
+@topics_blueprint.route("/topics/<id>/delete", methods=["POST"])
+def delete_topic(id):
+    topic_repository.delete(id)
+    return redirect("/topics")
 
+
+#show quizzes of topic X
+# ext.
