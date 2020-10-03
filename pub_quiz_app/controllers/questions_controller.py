@@ -5,21 +5,14 @@ import repositories.question_repository as question_repository
 
 question_blueprint = Blueprint("questions", __name__)
 
-#INDEX
+#index
 
+#new
 
-#NEW
+#create
 
+#edit
 
-#CREATE
+#update
 
-
-
-#EDIT
-
-
-#UPDATE
-
-
-#DELETE
-
+#delete
