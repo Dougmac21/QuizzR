@@ -2,7 +2,7 @@ from db.run_sql import run_sql
 from models.topic import Topic
 
 #save
-def save(topic)
+def save(topic):
     sql = "INSERT INTO topics (topic) VALUES (%s) RETURNING id"
     values = [topic.topic]
     results = run_sql(sql, values)
