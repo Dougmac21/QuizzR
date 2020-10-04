@@ -19,8 +19,8 @@ def new_question():
 #create
 @questions_blueprint.route("/questions", methods=["POST"])
 def create_question():
-    question = request.form["question"]
-    new_question = Question(question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic)
+    the_question = request.form["the_question"]
+    new_question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic)
     question_repository.save(new_question)
     return redirect("/questions")
 
@@ -34,8 +34,8 @@ def edit_question(id):
 #update
 @question_blueprint.route("/questions/<id>", methods=["POST"])
 def update_question(id):
-    question = request.form["question"]
-    question = Question(question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, id)
+    the_question = request.form["the_question"]
+    question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, id)
     question_repository.update(question)
     return redirect("/questions")
 

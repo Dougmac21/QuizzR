@@ -9,7 +9,7 @@ CREATE TABLE topics (
 
 CREATE TABLE questions (
     id SERIAL PRIMARY KEY,
-    question VARCHAR(255),
+    the_question VARCHAR(255),
     correct_answer VARCHAR(255),
     alt_ans_1 VARCHAR(255),
     alt_ans_2 VARCHAR(255),
