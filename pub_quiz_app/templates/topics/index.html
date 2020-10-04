@@ -2,20 +2,23 @@
 
 {%  block content  %}
 
+
 <h2>Quiz Topics</h2>
 
-{%  for topic in topics  %}
+{%  for topic in all_topics  %}
 
-<section>
+<div class="topic">
+    <div class="content">
+        {{  topic.name  }}
+        
 
-    <p>{{  topic.name  }}</p>
-    <a href="/topics/{{  topic.id  }}/edit"></a>
-    <form action="/topics/{{  topic.name  }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
 
-</section>
+
+    </div>
+</div>
 
 {%  endfor  %}
+
+text
 
 {%  endblock  %}

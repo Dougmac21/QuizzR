@@ -9,7 +9,7 @@ questions_blueprint = Blueprint("questions", __name__)
 @questions_blueprint.route("/questions")
 def questions():
     questions = question_repository.select_all()
-    return render_template("/questions/index.html", questions=questions)
+    return render_template("/questions/index.html", all_questions=questions)
 
 #new
 @questions_blueprint.route("/questions/new")

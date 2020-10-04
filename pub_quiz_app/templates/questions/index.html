@@ -5,17 +5,20 @@
 
 <h2>Questions</h2>
 
-{%  for question in Questions  %}
+{%  for question in all_questions  %}
 
-<section>
-    <p>{{  question.the_question  }}</p>
-    <a href="/questions/{{  question.id  }}/edit"></a>
-    <form action="/questions/{{  question.id  }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-</section>
+<div class="question">
+    <div class="content">
+        {{  question.the_question  }}
+        
+
+
+
+    </div>
+</div>
 
 {%  endfor  %}
 
+text
 
 {%  endblock  %}

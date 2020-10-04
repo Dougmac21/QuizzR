@@ -15,7 +15,7 @@ def topics():
 @topics_blueprint.route("/topics/new")
 def new_topic():
     all_topics = topic_repository.select_all()
-    return render_template("/topics/new.html", all_topics=topics)
+    return render_template("/topics/new.html", topic=topic)
 
 #create
 @topics_blueprint.route("/topics", methods=["POST"])
