@@ -12,7 +12,7 @@ import repositories.quiz_repository as quiz_repository
 
 topic_repository.delete_all()
 question_repository.delete_all()
-quiz_repository.delete_all()
+#quiz_repository.delete_all()
 
 
 topic_01 = Topic("Geography")
@@ -52,3 +52,7 @@ question_repository.save(question_005)
 
 question_006 = Question("Who shot Mr Burns?", "Maggie Simpson", "Homer Simpson", "Marge Simpson", "Smithers", "EASY", "Entertainment")
 question_repository.save(question_006)
+
+
+
+pdb.set_trace()

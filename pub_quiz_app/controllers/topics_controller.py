@@ -20,8 +20,8 @@ def topics():
 #create
 @topics_blueprint.route("/topics", methods=["POST"])
 def create_topic():
-    topic = request.form["topic"]
-    new_topic = Topic(topic)
+    name = request.form["name"]
+    new_topic = Topic(name)
     topic_repository.save(new_topic)
     return redirect("/topics")
 
@@ -36,8 +36,8 @@ def edit_topic(id):
 #update
 @topics_blueprint.route("/topics/<id>", methods = ["POST"])
 def update_topic(id):
-    topic = request.form["topic"]
-    topic = Topic(topic, id)
+    name = request.form["name"]
+    topic = Topic(name, id)
     topic_repository.update(topic)
     return redirect("/topics")
 
