@@ -3,13 +3,13 @@ from flask import Blueprint, Flask, redirect, render_template, request
 from models.topic import Topic
 import repositories.topic_repository as topic_repository
 
-topic_blueprint = Blueprint("topic", __name__)
+topics_blueprint = Blueprint("topics", __name__)
 
 #index
 @topics_blueprint.route("/topics")
 def topics():
     topics = topic_repository.select_all()
-    return render_template("topics/index.html", topics=topics)
+    return render_template("/topics/index.html", topics=topics)
 
 #new - formatting this from prior example is causing overlap - refactor tomorrow when brain power is higher.
 # @topics_blueprint.route("topics/new")
@@ -18,7 +18,7 @@ def topics():
 #     return render_template("topics/new.html", topics=topics)
 
 #create
-@topics_blueprint.route("topics", methods=["POST"])
+@topics_blueprint.route("/topics", methods=["POST"])
 def create_topic():
     topic = request.form["topic"]
     new_topic = Topic(topic)
@@ -27,10 +27,10 @@ def create_topic():
 
 
 #edit
-@topics_blueprint.route("topics/<id>/edit")
+@topics_blueprint.route("/topics/<id>/edit")
 def edit_topic(id):
     topic = topic_repository.select(id)
-    return render_template('topics/edit.html', topic=topic)
+    return render_template('/topics/edit.html', topic=topic)
 
 
 #update
