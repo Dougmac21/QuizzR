@@ -32,29 +32,31 @@ topic_repository.save(topic_05)
 topic_06 = Topic("Entertainment")
 topic_repository.save(topic_06)
 
-
+topic_repository.select_all()
 
 
 question_repository.delete_all()
 
 
-question_001 = Question("What is the capital of Scotland?", "Edinburgh", "Glasgow", "Dundee", "Stirling", "EASY", "Geography")
+question_001 = Question("What is the capital of Scotland?", "Edinburgh", "Glasgow", "Dundee", "Stirling", "EASY", "Geography", False)
 question_repository.save(question_001)
 
-question_002 = Question("Who shot JFK?", "Lee Harey Oswald", "Eminem", "Dr Dre", "Easy-E", "EASY", "History")
+question_002 = Question("Who shot JFK?", "Lee Harey Oswald", "Eminem", "Dr Dre", "Easy-E", "EASY", "History", False)
 question_repository.save(question_002)
 
-question_003 = Question("Which team won the world cup in 1966?", "England", "Germany", "Australia", "Nigeria", "EASY", "Sport")
+question_003 = Question("Which team won the world cup in 1966?", "England", "Germany", "Australia", "Nigeria", "EASY", "Sport", False)
 question_repository.save(question_003)
 
-question_004 = Question("Who invented gravity?", "Isaac Newton", "Albert Einstein", "Jimmy Carter", "Meryl Streep", "EASY", "Science")
+question_004 = Question("Who invented gravity?", "Isaac Newton", "Albert Einstein", "Jimmy Carter", "Meryl Streep", "EASY", "Science", False)
 question_repository.save(question_004)
 
-question_005 = Question("Who wrote Catch-22?", "Joseph Heller", "John Steinbeck", "Ernest Hemmingway", "Jane Austin", "MEDIUM", "Literature")
+question_005 = Question("Who wrote Catch-22?", "Joseph Heller", "John Steinbeck", "Ernest Hemmingway", "Jane Austin", "MEDIUM", "Literature", False)
 question_repository.save(question_005)
 
-question_006 = Question("Who shot Mr Burns?", "Maggie Simpson", "Homer Simpson", "Marge Simpson", "Smithers", "EASY", "Entertainment")
+question_006 = Question("Who shot Mr Burns?", "Maggie Simpson", "Homer Simpson", "Marge Simpson", "Smithers", "EASY", "Entertainment", False)
 question_repository.save(question_006)
+
+question_repository.select_all()
 
 
 

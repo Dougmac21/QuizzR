@@ -15,7 +15,8 @@ CREATE TABLE questions (
     alt_ans_2 VARCHAR(255),
     alt_ans_3 VARCHAR(255),
     difficulty VARCHAR(255),
-    topic_id SERIAL REFERENCES topics(id)
+    topic VARCHAR(255),
+    used BOOLEAN
 );
 
 CREATE TABLE quiz (
@@ -23,5 +24,5 @@ CREATE TABLE quiz (
     date VARCHAR(255),
     number_of_questions INT,
     difficulty VARCHAR(255),
-    topic_id SERIAL REFERENCES topics(id)
+    topic VARCHAR(255)
 );

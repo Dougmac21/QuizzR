@@ -12,7 +12,7 @@ import repositories.quiz_repository as quiz_repository
 
 #save
 def save(question):
-    sql = "INSERT INTO questions (question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, used) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO questions (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, used) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
     values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty, question.topic, question.used]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -54,7 +54,7 @@ def delete_all():
 
 #update
 def update(question):
-    sql = "UPDATE questions SET (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE questions SET (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, used) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty, question.topic, question.used, question.id]
     run_sql(sql, values)
 

@@ -28,7 +28,7 @@ def select_all():
     sql = "SELECT * FROM topics"
     results = run_sql(sql)
     for result in results:
-        topic = Topic(result["topic"], result["id"])
+        topic = Topic(result["name"], result["id"])
         topics.append(topic)
     return topics
 
