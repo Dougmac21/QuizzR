@@ -7,6 +7,54 @@
     <title>Pub Quiz Management</title>
 </head>
 <body>
-    
+
+    <header>
+
+        <h1>Pub Quiz Management</h1>
+        <nav>
+            <ul class="menu">
+                
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <br>
+            
+                Questions
+                <li>
+                    <a href="/questions">All Questions</a>
+                </li>
+                <li>
+                    <a href="/questions/new">Add Question</a>
+                </li>
+                <br>
+
+                Topics
+                <li>
+                    <a href="/topics">All Topics</a>
+                </li>
+                <li>
+                    <a href="/topics/new">Add Topic</a>
+                </li>
+                <br>
+
+                Quizzes
+                <li>
+                    <a href="/quizzes">All Quizzes</a>
+                </li>
+                <li>
+                    <a href="/quizzes/new">Add Quiz</a>
+                </li>
+                <br>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        {%  block content  %}
+        {%  endblock  %}
+    </div>
+
 </body>
 </html>
