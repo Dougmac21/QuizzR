@@ -49,6 +49,9 @@ topic_repository.select_all()
 
 difficulty_repository.delete_all()
 
+difficulty_0 = Difficulty("MIXED")
+difficulty_repository.save(difficulty_0)
+
 difficulty_1 = Difficulty("EASY")
 difficulty_repository.save(difficulty_1)
 

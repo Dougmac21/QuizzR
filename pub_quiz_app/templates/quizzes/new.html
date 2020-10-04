@@ -2,7 +2,7 @@
 
 {%  block content  %}
 
-<h2>Add a quiz to the archive.</h2>
+<h2>Generate A New Quiz!</h2>
 
 <form action="/quizzes" method="POST">
 
@@ -12,20 +12,38 @@
         <input type="text" id="date" name="date">
         <br>
 
+
         <label for="number_of_questions">Number of Questions:</label>
-        <input type="number" id="number_of_questions" name="number_of_questions">
+        <select name="number_of_questions" id="number_of_questions">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
         <br>
+
 
         <label for="difficulty">Difficulty:</label>
-        <input type="text" id="difficulty" name="difficulty">
+        <select name="difficulty" id="difficulty_id">
+            {%  for difficulty in all_difficulties  %}
+            <option value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
+            {%  endfor  %}
+        </select>
         <br>
+
 
         <label for="topic">Topic:</label>
-        <input type="text" id="topic" name="topic">
-        <br>
-
-        <label for="question_list">Question List:</label>
-        <input type="text" id="question_list" name="question_list">
+        <select name="topic" id="topic_id">
+            {%  for topic in all_topics  %}
+            <option value="{{  topic.id  }}">{{  topic.name  }}</option>
+            {%  endfor  %}
+        </select>
         <br>
 
         <input type="submit">
