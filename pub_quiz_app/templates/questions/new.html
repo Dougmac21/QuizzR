@@ -1,3 +1,47 @@
-{% extends 'base.html' %}
+{%  extends 'base.html'  %}
 
-question new page
+{%  block content  %}
+
+<h2>Add a question to the archive.</h2>
+
+<form action="/questions" method="POST">
+
+    <div>
+
+        <label for="the_question">Question:</label>
+        <input type="text" id="the_question" name="the_question">
+        <br>
+
+        <label for="correct_answer">Correct Answer:</label>
+        <input type="text" id="correct_answer" name="correct_answer>
+        <br>
+
+        <label for="alt_ans_1">Alternate Answer 1:</label>
+        <input type="text" id="alt_ans_1" name="alt_ans_1">
+        <br>
+
+        <label for="alt_ans_2">Alternate Answer 2:</label>
+        <input type="text" id="alt_ans_2" name="alt_ans_2">
+        <br>
+
+        <label for="alt_ans_3">Alternate Answer 3:</label>
+        <input type="text" id="alt_ans_3" name="alt_ans_3>
+        <br>
+
+        <label for="difficulty">Difficulty Level:</label>
+        <input type="select" id="difficulty" name="difficulty">
+        <br>
+
+        <label for="topic">Question Topic:</label>
+        <input type="select" id="topic" name="topic">
+        <br>
+
+        <label for="used">Used at a previous quiz?:</label>
+        <input type="checkbox" id="used" name="used">
+        <br>
+
+    </div>
+
+</form>
+
+{%  endblock  %}
