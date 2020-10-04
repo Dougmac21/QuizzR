@@ -1,3 +1,18 @@
 {% extends 'base.html' %}
 
-topics new page
+{%  block content  %}
+
+<h2>Add A Quiz Topic</h2>
+
+<form action="/topics" method="POST">
+
+    <div>
+        <label for="name">Topic Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <input type="submit">
+    </div>
+
+</form>
+
+{%  endblock  %}
