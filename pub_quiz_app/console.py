@@ -37,6 +37,12 @@ topic_repository.save(topic_05)
 topic_06 = Topic("Entertainment")
 topic_repository.save(topic_06)
 
+topic_07 = Topic("Arts")
+topic_repository.save(topic_07)
+
+topic_08 = Topic("Music")
+topic_repository.save(topic_08)
+
 topic_repository.select_all()
 
 
