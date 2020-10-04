@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS questions;
 
 CREATE TABLE topics (
     id SERIAL PRIMARY KEY,
-    topic VARCHAR(255)
+    name VARCHAR(255)
 );
 
 CREATE TABLE questions (
