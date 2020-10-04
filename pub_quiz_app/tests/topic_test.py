@@ -9,4 +9,5 @@ class TopicTest(unittest.TestCase):
     def setUp(self):
         self.topic = Topic("Test Topic")
 
-    
+    def test_topic_exists(self):
+        self.assertEqual("Test Topic", self.topic.name)
