@@ -14,7 +14,7 @@ def all_quizzes():
 #new
 @quizzes_blueprint.route("/quizzes/new")
 def new_quiz():
-    all_quizzes = quiz_repository.select_all()
+    quizzes = quiz_repository.select_all()
     return render_template("/quizzes/new.html", quizzes=quizzes)
 
 #create

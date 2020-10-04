@@ -1,3 +1,37 @@
-{% extends 'base.html' %}
+{%  extends 'base.html'  %}
 
-quizzes new page
+{%  block content  %}
+
+<h2>Add a quiz to the archive.</h2>
+
+<form action="/quizzes" method="POST">
+
+    <div>
+
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date">
+        <br>
+
+        <label for="number_of_questions">Number of Questions:</label>
+        <input type="number" id="number_of_questions" name="number_of_questions">
+        <br>
+
+        <label for="difficulty">Difficulty:</label>
+        <input type="text" id="difficulty" name="difficulty">
+        <br>
+
+        <label for="topic">Topic:</label>
+        <input type="text" id="topic" name="topic">
+        <br>
+
+        <label for="question_list">Question List:</label>
+        <input type="text" id="question_list" name="question_list">
+        <br>
+
+        <input type="submit">
+
+    </div>
+
+</form>
+
+{%  endblock  %}
