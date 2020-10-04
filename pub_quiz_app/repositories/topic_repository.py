@@ -45,8 +45,8 @@ def delete_all():
 
 #update
 def update(topic):
-    sql = "UPDATE topics SET (topic) = (%s) WHERE id = %s"
-    values = [topic.topic, topic.id]
+    sql = "UPDATE topics SET (name) = (%s) WHERE id = %s"
+    values = [topic.name, topic.id]
     run_sql(sql, values)
 
 
