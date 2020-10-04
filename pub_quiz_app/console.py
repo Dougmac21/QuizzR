@@ -11,7 +11,6 @@ import repositories.question_repository as question_repository
 
 
 topic_repository.delete_all()
-question_repository.delete_all()
 #quiz_repository.delete_all()
 
 
@@ -33,6 +32,10 @@ topic_repository.save(topic_05)
 topic_06 = Topic("Entertainment")
 topic_repository.save(topic_06)
 
+
+
+
+question_repository.delete_all()
 
 
 question_001 = Question("What is the capital of Scotland?", "Edinburgh", "Glasgow", "Dundee", "Stirling", "EASY", "Geography")

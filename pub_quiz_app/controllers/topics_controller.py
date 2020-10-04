@@ -11,11 +11,11 @@ def topics():
     topics = topic_repository.select_all()
     return render_template("/topics/index.html", topics=topics)
 
-#new - formatting this from prior example is causing overlap - refactor tomorrow when brain power is higher.
-# @topics_blueprint.route("topics/new")
-# def new_topic():
-#     all_topics = topic_repository.select_all()
-#     return render_template("topics/new.html", topics=topics)
+#new
+@topics_blueprint.route("/topics/new")
+def new_topic():
+    all_topics = topic_repository.select_all()
+    return render_template("/topics/new.html", topics=topics)
 
 #create
 @topics_blueprint.route("/topics", methods=["POST"])
