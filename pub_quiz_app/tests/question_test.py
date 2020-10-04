@@ -17,3 +17,13 @@ class QuestionTest(unittest.TestCase):
         self.assertEqual("1", self.question.alt_ans_3)
         self.assertEqual("EASY", self.question.difficulty)    
         self.assertEqual("Science", self.question.topic)
+
+    def test_questions_can_be_added(self):
+        self.question2 = Question("What is 3 plus 3?", "6", "5", "4", "3", "MEDIUM", "Maths")
+        self.assertEqual("What is 3 plus 3?", self.question2.the_question)
+        self.assertEqual("6", self.question2.correct_answer)
+        self.assertEqual("5", self.question2.alt_ans_1)
+        self.assertEqual("4", self.question2.alt_ans_2)
+        self.assertEqual("3", self.question2.alt_ans_3)
+        self.assertEqual("MEDIUM", self.question2.difficulty)    
+        self.assertEqual("Maths", self.question2.topic)
