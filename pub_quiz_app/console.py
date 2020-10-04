@@ -61,7 +61,7 @@ question_repository.select_all()
 
 quiz_repository.delete_all()
 
-quiz_01 = Quiz("2020-01-01", 5, "EASY", "General Knowledge", [{}, {}, {}, {}, {}])
+quiz_01 = Quiz("2020-01-01", 5, "EASY", "General Knowledge", [])
 quiz_repository.save(quiz_01)
 
 quiz_repository.select_all()

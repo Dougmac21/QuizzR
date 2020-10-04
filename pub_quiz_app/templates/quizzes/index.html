@@ -1,3 +1,62 @@
 {% extends 'base.html' %}
 
-quizzes index page
+{%  block content  %}
+
+
+<h2>Quizzes</h2>
+
+{%  for quiz in all_quizzes  %}
+<div class="id">
+    <div class="content">
+        {{  quiz.id  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for quiz in all_quizzes  %}
+<div class="id">
+    <div class="content">
+        {{  quiz.date  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for quiz in all_quizzes  %}
+<div class="id">
+    <div class="content">
+        {{  quiz.number_of_questions  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for quiz in all_quizzes  %}
+<div class="id">
+    <div class="content">
+        {{  quiz.difficulty  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for quiz in all_quizzes  %}
+<div class="id">
+    <div class="content">
+        {{  quiz.topic  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for quiz in all_quizzes  %}
+<div class="id">
+    <div class="content">
+        {{  quiz.question_list  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  endblock  %}

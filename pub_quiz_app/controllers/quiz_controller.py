@@ -8,14 +8,14 @@ quizzes_blueprint = Blueprint("quizzes", __name__)
 #index
 @quizzes_blueprint.route("/quizzes")
 def all_quizzes():
-    quizzes = quizzes.repository.select_all()
-    return render_template("/quizzes/index.html", quizzes=quizzes)
+    quizzes = quiz_repository.select_all()
+    return render_template("/quizzes/index.html", all_quizzes=quizzes)
 
 #new
 @quizzes_blueprint.route("/quizzes/new")
 def new_quiz():
     all_quizzes = quiz_repository.select_all()
-    return render_template("/quizzes/new.html", all_quizzes=quizzes)
+    return render_template("/quizzes/new.html", quizzes=quizzes)
 
 #create
 @quizzes_blueprint.route("/quizzes", methods=["POST"])
