@@ -3,7 +3,7 @@ import pdb
 from models.topic import Topic
 import repositories.topic_repository as topic_repository
 
-from models.difficulty import difficulty
+from models.difficulty import Difficulty
 import repositories.difficulty_repository as difficulty_repository
 
 from models.question import Question

@@ -1,0 +1,10 @@
+id = results[0]['id']
+IndexError: list index out of range
+
+    This error was caused by a mismatch between the name of the class parameter
+    and the name of the parameter stated in the .sql database which results
+    in a table column name mismatch.
+
+
+---
+

@@ -10,7 +10,7 @@ CREATE TABLE topics (
 
 CREATE TABLE difficulties (
     id SERIAL PRIMARY KEY,
-    difficulty VARCHAR(10)
+    level VARCHAR(10)
 );
 
 CREATE TABLE questions (
