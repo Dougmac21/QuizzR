@@ -6,19 +6,77 @@
 <h2>Questions</h2>
 
 {%  for question in all_questions  %}
-
 <div class="question">
     <div class="content">
         {{  question.the_question  }}
-        
-
-
-
     </div>
 </div>
-
 {%  endfor  %}
 
-text
+<br>
+
+{%  for question in all_questions  %}
+<div class="correct_answer">
+    <div class="content">
+        {{  question.correct_answer  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for question in all_questions  %}
+<div class="alt_ans_1">
+    <div class="content">
+        {{  question.alt_ans_1  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for question in all_questions  %}
+<div class="alt_ans_2">
+    <div class="content">
+        {{  question.alt_ans_2  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for question in all_questions  %}
+<div class="alt_ans_3">
+    <div class="content">
+        {{  question.alt_ans_3  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for question in all_questions  %}
+<div class="difficulty">
+    <div class="content">
+        {{  question.difficulty  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for question in all_questions  %}
+<div class="topic">
+    <div class="content">
+        {{  question.topic  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for question in all_questions  %}
+<div class="used">
+    <div class="content">
+        {{  question.used  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
 
 {%  endblock  %}
