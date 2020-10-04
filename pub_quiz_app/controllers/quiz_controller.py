@@ -48,7 +48,7 @@ def update_quiz(id):
     return redirect("/quizzes")
 
 #delete
-@quizzes_blueprint.route("quizzes/<id>/delete", methods=["POST"])
+@quizzes_blueprint.route("/quizzes/<id>/delete", methods=["POST"])
 def delete_quiz(id):
     quiz_repository.delete(id)
     return redirect("/quizzes")
