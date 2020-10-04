@@ -47,7 +47,3 @@ def update_topic(id):
 def delete_topic(id):
     topic_repository.delete(id)
     return redirect("/topics")
-
-
-#show quizzes of topic X
-# ext.
