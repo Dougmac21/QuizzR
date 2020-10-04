@@ -1,2 +1,46 @@
 {% extends 'base.html' %}
 
+{%  block content  %}
+
+<h2>Update a Question</h2>
+
+<form action="/questions/{{  question.id  }}" method="POST">
+
+    <div>
+
+        <label for="the_question">Question:</label>
+        <input type="text" id="the_question" name="the_question" value="{{  question.the_question  }}">
+        <br>
+
+        <label for="correct_answer">Correct Answer:</label>
+        <input type="text" id="correct_answer" name="correct_answer" value="{{  question.correct_answer  }}">
+        <br>
+
+        <label for="alt_ans_1">Alternate Answer 1:</label>
+        <input type="text" id="alt_ans_1" name="alt_ans_1" value="{{  question.alt_ans_1  }}">
+        <br>
+
+        <label for="alt_ans_2">Alternate Answer 2:</label>
+        <input type="text" id="alt_ans_2" name="alt_ans_2" value="{{  question.alt_ans_2  }}">
+        <br>
+
+        <label for="alt_ans_3">Alternate Answer 3:</label>
+        <input type="text" id="alt_ans_3" name="alt_ans_3" value="{{  question.alt_ans_3  }}">
+        <br>
+
+        <label for="difficulty">Difficulty Level:</label>
+        <input type="select" id="difficulty" name="difficulty" value="{{  question.difficulty  }}">
+        <br>
+
+        <label for="topic">Question Topic:</label>
+        <input type="select" id="topic" name="topic" value="{{  question.topic  }}">
+        <br>
+
+        <label for="used">Used at a previous quiz?:</label>
+        <input type="checkbox" id="used" name="used" value="{{  question.used  }}">
+        <br>
+
+    </div>
+
+
+</form>

@@ -1,3 +1,17 @@
 {% extends 'base.html' %}
 
-question index page
+{%  block content  %}
+
+
+<h2>Questions</h2>
+
+{%  for question in Questions  %}
+
+<section>
+    <p>{{  question.the_question  }}</p>
+    <a href="/questions/{{  question.id  }}/edit"></a>
+    <form action="/questions/{{  question.id  }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+    
+</section>
