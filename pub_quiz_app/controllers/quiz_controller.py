@@ -7,15 +7,15 @@ quizzes_blueprint = Blueprint("quizzes", __name__)
 
 #index
 @quizzes_blueprint.route("/quizzes")
-def quizzes():
+def all_quizzes():
     quizzes = quizzes.repository.select_all()
-    return render_template("/quizzes/index.html", all_quizzes = quizzes)
+    return render_template("/quizzes/index.html", quizzes=quizzes)
 
 #new
 @quizzes_blueprint.route("/quizzes/new")
 def new_quiz():
     all_quizzes = quiz_repository.select_all()
-    return render_template("/quizzes/new.html", quiz=quiz)
+    return render_template("/quizzes/new.html", all_quizzes=quizzes)
 
 #create
 @quizzes_blueprint.route("/quizzes", methods=["POST"])
@@ -33,7 +33,7 @@ def create_quiz():
 @quizzes_blueprint.route("/quizzes/<id>/edit")
 def edit_quiz(id):
     quiz = quiz_repository.select(id)
-    return render_template("/quizzes/edit.html", this_quiz = quiz)
+    return render_template("/quizzes/edit.html", this_quiz=quiz)
 
 #update
 @quizzes_blueprint.route("/quizzes/<id>", methods = ["POST"])

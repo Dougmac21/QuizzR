@@ -19,10 +19,11 @@ CREATE TABLE questions (
     used BOOLEAN
 );
 
-CREATE TABLE quiz (
+CREATE TABLE quizzes (
     id SERIAL PRIMARY KEY,
     date VARCHAR(255),
     number_of_questions INT,
     difficulty VARCHAR(255),
-    topic VARCHAR(255)
+    topic VARCHAR(255),
+    question_list TEXT
 );

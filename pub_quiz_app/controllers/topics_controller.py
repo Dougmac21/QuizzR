@@ -7,15 +7,15 @@ topics_blueprint = Blueprint("topics", __name__)
 
 #index
 @topics_blueprint.route("/topics")
-def topics():
+def all_topics():
     topics = topic_repository.select_all()
-    return render_template("/topics/index.html", all_topics=topics)
+    return render_template("/topics/index.html", all_topics=topics)     # where does this all_topics come from?
 
 #new
 @topics_blueprint.route("/topics/new")
 def new_topic():
-    all_topics = topic_repository.select_all()
-    return render_template("/topics/new.html", topic=topic)
+    topics = topic_repository.select_all()
+    return render_template("/topics/new.html", topics=topics)
 
 #create
 @topics_blueprint.route("/topics", methods=["POST"])

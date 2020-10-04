@@ -7,7 +7,7 @@ questions_blueprint = Blueprint("questions", __name__)
 
 #index
 @questions_blueprint.route("/questions")
-def questions():
+def all_questions():
     questions = question_repository.select_all()
     return render_template("/questions/index.html", all_questions=questions)
 

@@ -30,7 +30,7 @@ def select(id):
 def select_all():
     quizzes = []
     sql = "SELECT * FROM quizzes"
-    result = run_sql(sql)
+    results = run_sql(sql)
     for result in results:
         quiz = Quiz(result["date"], result["number_of_questions"], result["difficulty"], result["topic"], result["question_list"], result["id"])
         quizzes.append(quiz)
