@@ -6,13 +6,21 @@
 <h2>Questions</h2>
 
 {%  for question in all_questions  %}
+<div class="id">
+    <div class="content">
+        {{  question.id  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for question in all_questions  %}
 <div class="question">
     <div class="content">
         {{  question.the_question  }}
     </div>
 </div>
 {%  endfor  %}
-
 <br>
 
 {%  for question in all_questions  %}

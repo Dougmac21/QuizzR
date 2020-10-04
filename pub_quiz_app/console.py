@@ -6,13 +6,14 @@ import repositories.topic_repository as topic_repository
 from models.question import Question
 import repositories.question_repository as question_repository
 
-# from models.quiz import Quiz
-# import repositories.quiz_repository as quiz_repository
+from models.quiz import Quiz
+import repositories.quiz_repository as quiz_repository
 
 
 topic_repository.delete_all()
-#quiz_repository.delete_all()
 
+topic_00 = Topic("General Knowledge")
+topic_repository.save(topic_00)
 
 topic_01 = Topic("Geography")
 topic_repository.save(topic_01)
@@ -37,7 +38,6 @@ topic_repository.select_all()
 
 question_repository.delete_all()
 
-
 question_001 = Question("What is the capital of Scotland?", "Edinburgh", "Glasgow", "Dundee", "Stirling", "EASY", "Geography", False)
 question_repository.save(question_001)
 
@@ -58,6 +58,12 @@ question_repository.save(question_006)
 
 question_repository.select_all()
 
+
+quiz_repository.delete_all()
+
+# placeholder for inputs
+
+quiz_repository.select_all()
 
 
 pdb.set_trace()

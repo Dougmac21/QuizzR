@@ -4,6 +4,6 @@ class Quiz():
         self.number_of_questions = number_of_questions
         self.difficulty = difficulty
         self.topic = topic
-        self.questions = []
+        self.question_list = []
         self.id = id
 
