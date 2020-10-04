@@ -48,7 +48,3 @@ def update(topic):
     sql = "UPDATE topics SET (name) = (%s) WHERE id = %s"
     values = [topic.name, topic.id]
     run_sql(sql, values)
-
-
-## select quizzes of topic
-# extension

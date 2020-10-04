@@ -3,11 +3,15 @@ import pdb
 from models.topic import Topic
 import repositories.topic_repository as topic_repository
 
+from models.difficulty import difficulty
+import repositories.difficulty_repository as difficulty_repository
+
 from models.question import Question
 import repositories.question_repository as question_repository
 
 from models.quiz import Quiz
 import repositories.quiz_repository as quiz_repository
+
 
 
 topic_repository.delete_all()
@@ -36,6 +40,22 @@ topic_repository.save(topic_06)
 topic_repository.select_all()
 
 
+
+difficulty_repository.delete_all()
+
+difficulty_1 = Difficulty("EASY")
+difficulty_repository.save(difficulty_1)
+
+difficulty_2 = Difficulty("MEDIUM")
+difficulty_repository.save(difficulty_2)
+
+difficulty_3 = Difficulty("HARD")
+difficulty_repository.save(difficulty_3)
+
+difficulty_repository.select_all()
+
+
+
 question_repository.delete_all()
 
 question_001 = Question("What is the capital of Scotland?", "Edinburgh", "Glasgow", "Dundee", "Stirling", "EASY", "Geography", False)
@@ -57,6 +77,7 @@ question_006 = Question("Who shot Mr Burns?", "Maggie Simpson", "Homer Simpson",
 question_repository.save(question_006)
 
 question_repository.select_all()
+
 
 
 quiz_repository.delete_all()
