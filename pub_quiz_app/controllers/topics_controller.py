@@ -1,4 +1,11 @@
-# topics controller deactivated due to project scope change.
+
+
+###     ###      topics controller deactivated due to project scope change. ###     ###
+
+
+
+
+
 
 # from flask import Blueprint, Flask, redirect, render_template, request
 

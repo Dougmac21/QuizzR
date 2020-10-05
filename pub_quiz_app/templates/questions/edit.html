@@ -29,7 +29,7 @@
         <br>
 
         <label for="difficulty">Difficulty:</label>
-        <select name="difficulty" id="difficulty_id">
+        <select id="difficulty_id" name="difficulty">
             {%  for difficulty in all_difficulties  %}
 
             <option value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
@@ -39,7 +39,7 @@
         <br>
 
         <label for="topic">Topic:</label>
-        <select name="topic" id="topic_id">
+        <select id="topic_id"name="topic">
             {%  for topic in all_topics  %}
 
             <option value="{{  topic.id  }}">{{  topic.name  }}</option>
@@ -48,9 +48,9 @@
         </select>
         <br>
 
-        <label for="used">Used at a previous quiz?:</label>
+        <!-- <label for="used">Used at a previous quiz?:</label>
         <input type="checkbox" id="used" name="used" value="{{  question.used  }}">
-        <br>
+        <br> -->
 
         <input type="submit" class="edit" value="Save Edits">
 
