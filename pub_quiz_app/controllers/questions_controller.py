@@ -33,9 +33,15 @@ def create_question():
     alt_ans_1 = request.form["alt_ans_1"]
     alt_ans_2 = request.form["alt_ans_2"]
     alt_ans_3 = request.form["alt_ans_3"]
-    difficulty = request.form["difficulty"]
-    topic = request.form["topic"]
+
+    difficulty_id = request.form["difficulty_id"]
+    difficulty = difficulty_repository.select(difficulty_id)
+
+    topic_id = request.form["topic_id"]
+    topic = topic_repository.select(topic_id)
+
     used = False
+
     new_question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, used)
     question_repository.save(new_question)
     return redirect("/questions")
@@ -57,12 +63,11 @@ def update_question(id):
     alt_ans_1 = request.form["alt_ans_1"]
     alt_ans_2 = request.form["alt_ans_2"]
     alt_ans_3 = request.form["alt_ans_3"]
-    difficulty_id = request.form["difficulty_id"]
-    topic_id = request.form["topic_id"]
-    print("HJGAKGKGSDJHSGDJHGSDJHSGDJHSD", difficulty_id)
-    print('7364872364872364872364872', topic_id)
 
+    difficulty_id = request.form["difficulty_id"]
     difficulty = difficulty_repository.select(difficulty_id)
+
+    topic_id = request.form["topic_id"]
     topic = topic_repository.select(topic_id)
 
     question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, id)
