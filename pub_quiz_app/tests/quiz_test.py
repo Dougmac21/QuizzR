@@ -18,4 +18,10 @@ class QuizTest(unittest.TestCase):
         self.assertEqual("General Knowledge", self.test_quiz.topic)
         self.assertEqual([], self.test_quiz.question_list)
 
-    
+    def test_quiz_can_be_added(self):
+        self.test_quiz_2 = Quiz("2020-02-02", 10, "MEDIUM", "Geography", [])
+        self.assertEqual("2020-02-02", self.test_quiz_2.date)
+        self.assertEqual(10, self.test_quiz_2.number_of_questions)
+        self.assertEqual("MEDIUM", self.test_quiz_2.difficulty)
+        self.assertEqual("Geography", self.test_quiz_2.topic)
+        self.assertEqual([], self.test_quiz_2.question_list)
