@@ -12,8 +12,8 @@ import repositories.question_repository as question_repository
 
 #save
 def save(question):
-    sql = "INSERT INTO questions (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, used) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty, question.topic, question.used]
+    sql = "INSERT INTO questions (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty_id, topic_id used) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty.id, question.topic.id, question.used]
     results = run_sql(sql, values)
     id = results[0]['id']
     question.id = id
@@ -24,7 +24,9 @@ def select(id):
     sql = "SELECT * FROM questions WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    question = Question(result["the_question"], result["correct_answer"], result["alt_ans_1"], result["alt_ans_2"], result["alt_ans_3"], result["difficulty"], result["topic"], result["used"], result["id"])
+    difficulty = difficulty_repository.select(result["difficulty_id"])
+    topic = topic_repository.select(result["topic_id"])
+    question = Question(result["the_question"], result["correct_answer"], result["alt_ans_1"], result["alt_ans_2"], result["alt_ans_3"], difficulty, topic, result["used"], result["id"])
     return question
 
 
@@ -34,7 +36,9 @@ def select_all():
     sql = "SELECT * FROM questions"
     results = run_sql(sql)
     for result in results:
-        question = Question(result["the_question"], result["correct_answer"], result["alt_ans_1"], result["alt_ans_2"], result["alt_ans_3"], result["difficulty"], result["topic"], result["used"], result["id"])
+        difficulty = difficulty_repository.select(["difficulty_id"])
+        topic = topic_repository.select(["topic_id"])
+        question = Question(result["the_question"], result["correct_answer"], result["alt_ans_1"], result["alt_ans_2"], result["alt_ans_3"], difficulty, topic, result["used"], result["id"])
         questions.append(question)
     return questions
 
@@ -54,7 +58,7 @@ def delete_all():
 
 #update
 def update(question):
-    sql = "UPDATE questions SET (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty, question.topic, question.id]
+    sql = "UPDATE questions SET (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty_id, topic_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty.id, question.topic.id, question.id]
     run_sql(sql, values)
 
