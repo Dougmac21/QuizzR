@@ -36,17 +36,17 @@ You must put answers which are incorrect into the alternate answer fields.
         <br>
 
         <label for="difficulty">Difficulty:</label>
-        <select name="difficulty_id" id="difficulty">
-            {%  for any_difficulty in all_difficulties  %}
-            <option value="{{  any_difficulty.id  }}">{{  any_difficulty.level  }}</option>
+        <select name="difficulty" id="difficulty_id">
+            {%  for difficulty in all_difficulties  %}
+            <option value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
             {%  endfor  %}
         </select>
         <br>
 
         <label for="topic">Topic:</label>
-        <select name="topic_id" id="topic">
-            {%  for any_topic in all_topics  %}
-            <option value="{{  any_topic.id  }}">{{  any_topic.name  }}</option>
+        <select name="topic" id="topic_id">
+            {%  for topic in all_topics  %}
+            <option value="{{  topic.id  }}">{{  topic.name  }}</option>
             {%  endfor  %}
         </select>
         <br>

@@ -1,5 +1,11 @@
 from flask import Blueprint, Flask, redirect, render_template, request
 
+from models.topic import Topic
+import repositories.topic_repository as topic_repository
+
+from models.difficulty import Difficulty
+import repositories.difficulty_repository as difficulty_repository
+
 from models.question import Question
 import repositories.question_repository as question_repository
 
@@ -14,7 +20,10 @@ def all_questions():
 #new
 @questions_blueprint.route("/questions/new")
 def new_question():
-    return render_template("/questions/new.html")
+    questions = question_repository.select_all()
+    topics = topic_repository.select_all()
+    difficulties = difficulty_repository.select_all()
+    return render_template("/questions/new.html", all_questions=questions, all_topics=topics, all_difficulties=difficulties)
 
 #create
 @questions_blueprint.route("/questions", methods=["POST"])

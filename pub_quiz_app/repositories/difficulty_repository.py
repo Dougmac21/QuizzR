@@ -13,7 +13,6 @@ def save(difficulty):
     difficulty.id = id
     return difficulty
 
-
 #select
 def select(id):
     sql = "SELECT * FROM difficulties WHERE id = %s"
