@@ -35,9 +35,15 @@ def new_quiz():
 def create_quiz():
     date = request.form["date"]
     number_of_questions = request.form["number_of_questions"]
-    difficulty = request.form["difficulty"]
-    topic = request.form["topic"]
+
+    difficulty_id = request.form["difficulty_id"]
+    difficulty = difficulty_repository.select(difficulty_id)
+
+    topic_id = request.form["topic_id"]
+    topic = topic_repository.select(topic_id)
+
     question_list = request.form["question_list"]
+
     new_quiz = Quiz(date, number_of_questions, difficulty, topic, question_list)
     quiz_repository.save(new_quiz)
     return redirect("/quizzes")
@@ -46,16 +52,24 @@ def create_quiz():
 @quizzes_blueprint.route("/quizzes/<id>/edit")
 def edit_quiz(id):
     quiz = quiz_repository.select(id)
-    return render_template("/quizzes/edit.html", this_quiz=quiz)
+    topics = topic_repository.select_all()
+    difficulties = difficulty_repository.select_all()
+    return render_template("/quizzes/edit.html", quiz=quiz, all_topics=topics, all_difficulties=difficulties)
 
 #update
 @quizzes_blueprint.route("/quizzes/<id>", methods = ["POST"])
 def update_quiz(id):
     date = request.form["date"]
     number_of_questions = request.form["number_of_questions"]
-    difficulty = request.form["difficulty"]
-    topic = request.form["topic"]
+
+    difficulty_id = request.form["difficulty_id"]
+    difficulty = difficulty_repository.select(difficulty_id)
+
+    topic_id = request.form["topic_id"]
+    topic = topic_repository.select(topic_id)
+
     question_list = request.form["question_list"]
+    
     quiz = Quiz(date, number_of_questions, difficulty, topic, question_list, id)
     quiz_repository.update(quiz)
     return redirect("/quizzes")
