@@ -26,7 +26,7 @@
 
         <label for="difficulty">Difficulty Level:</label>
         <select name="difficulty" id="difficulty_id">
-            {%  for difficulty in all_difficulties  %}
+            {%  for any_difficulty in all_difficulties  %}
             <option value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
             {%  endfor  %}
         </select>
@@ -35,7 +35,7 @@
 
         <label for="topic">Specialist Subject:</label>
         <select name="topic" id="topic_id">
-            {%  for topic in all_topics  %}
+            {%  for any_topic in all_topics  %}
             <option value="{{  topic.id  }}">{{  topic.name  }}</option>
             {%  endfor  %}
         </select>
