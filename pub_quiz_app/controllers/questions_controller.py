@@ -44,7 +44,9 @@ def create_question():
 @questions_blueprint.route("/questions/<id>/edit")
 def edit_question(id):
     question = question_repository.select(id)
-    return render_template('/questions/edit.html', question=question)
+    topics = topic_repository.select_all()
+    difficulties = difficulty_repository.select_all()
+    return render_template('/questions/edit.html', question=question, all_topics=topics, all_difficulties=difficulties)
 
 
 #update

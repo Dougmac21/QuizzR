@@ -86,5 +86,18 @@
 {%  endfor  %}
 <br>
 
+{%  for question in all_questions  %}
+<div>
+    <p><a href="/questions/{{question.id}}/edit">Edit Question</a></p>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for question in all_questions  %}
+<div>
+    <p><a href="/questions/{{question.id}}/remove">Delete Question</a></p>
+</div>
+{%  endfor  %}
+<br>
 
 {%  endblock  %}
