@@ -88,14 +88,18 @@
 
 {%  for question in all_questions  %}
 <div>
-    <p><a href="/questions/{{question.id}}/edit">Edit Question</a></p>
+    <form action="/questions/{{  question.id  }}/edit">
+        <input type="submit" class="edit" value="Edit Question">
+    </form>
 </div>
 {%  endfor  %}
 <br>
 
 {%  for question in all_questions  %}
 <div>
-    <p><a href="/questions/{{question.id}}/remove">Delete Question</a></p>
+    <form action="/question/{{  question.id  }}/delete" methods="POST">
+        <input type="submit" class="delete" value="Delete Question">
+    </form>
 </div>
 {%  endfor  %}
 <br>
