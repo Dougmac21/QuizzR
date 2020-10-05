@@ -30,7 +30,7 @@ CREATE TABLE quizzes (
     id SERIAL PRIMARY KEY,
     date VARCHAR(255),
     number_of_questions INT,
-    difficulty_id INT REFERENCES difficulties(id)
-    topic INT REFERENCES topics(id)
+    difficulty_id INT REFERENCES difficulties(id),
+    topic_id INT REFERENCES topics(id),
     question_list TEXT
 );
