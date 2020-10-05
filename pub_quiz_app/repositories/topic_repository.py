@@ -19,7 +19,7 @@ def select(id):
     sql = "SELECT * FROM topics WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    topic = Topic(result["topic"])
+    topic = Topic(result["topic"], result["id"])
     return topic
 
 #select-all

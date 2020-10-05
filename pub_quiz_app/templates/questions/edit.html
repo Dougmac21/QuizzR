@@ -28,29 +28,27 @@
         <input type="text" id="alt_ans_3" name="alt_ans_3" value="{{  question.alt_ans_3  }}">
         <br>
 
-        <label for="difficulty">Difficulty:</label>
-        <select id="difficulty_id" name="difficulty">
+        <label for="difficulty_id">Difficulty:</label>
+        <select id="difficulty_id" name="difficulty_id">
+            <option value="{{ question.difficulty.id }}">{{  question.difficulty  }}</option>
             {%  for difficulty in all_difficulties  %}
-
-            <option value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
-
+            {% if question.difficulty != difficulty.level %}
+                <option value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
+            {% endif %}
             {%  endfor  %}
         </select>
         <br>
 
-        <label for="topic">Topic:</label>
-        <select id="topic_id"name="topic">
+        <label for="topic_id">Topic:</label>
+        <select id="topic_id" name="topic_id">
+            <option value="{{ question.topic.id }}">{{  question.topic  }}</option>
             {%  for topic in all_topics  %}
-
-            <option value="{{  topic.id  }}">{{  topic.name  }}</option>
-
+            {% if question.topic != topic.name %}
+                <option value="{{  topic.id  }}">{{  topic.name  }}</option>
+            {% endif %}
             {%  endfor  %}
         </select>
         <br>
-
-        <!-- <label for="used">Used at a previous quiz?:</label>
-        <input type="checkbox" id="used" name="used" value="{{  question.used  }}">
-        <br> -->
 
         <input type="submit" class="edit" value="Save Edits">
 

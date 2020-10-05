@@ -18,7 +18,7 @@ def select(id):
     sql = "SELECT * FROM difficulties WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    difficulty = Difficulty(result["level"])
+    difficulty = Difficulty(result["level"], result["id"])
     return difficulty
 
 #select-all

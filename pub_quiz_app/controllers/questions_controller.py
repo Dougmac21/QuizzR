@@ -57,9 +57,14 @@ def update_question(id):
     alt_ans_1 = request.form["alt_ans_1"]
     alt_ans_2 = request.form["alt_ans_2"]
     alt_ans_3 = request.form["alt_ans_3"]
-    difficulty = request.form["difficulty"]
-    topic = request.form["topic"]
-    # used = request.form["used"]
+    difficulty_id = request.form["difficulty_id"]
+    topic_id = request.form["topic_id"]
+    print("HJGAKGKGSDJHSGDJHGSDJHSGDJHSD", difficulty_id)
+    print('7364872364872364872364872', topic_id)
+
+    difficulty = difficulty_repository.select(difficulty_id)
+    topic = topic_repository.select(topic_id)
+
     question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, id)
     question_repository.update(question)
     return redirect("/questions")
