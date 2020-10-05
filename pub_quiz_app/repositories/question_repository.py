@@ -41,7 +41,7 @@ def select_all():
 
 #delete
 def delete(id):
-    sql = "DELETE FROM questions HERE is = %s"
+    sql = "DELETE FROM questions WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 

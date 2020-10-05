@@ -97,7 +97,7 @@
 
 {%  for question in all_questions  %}
 <div>
-    <form action="/question/{{  question.id  }}/delete" methods="POST">
+    <form action="/questions/{{  question.id  }}/delete" method="POST">
         <input type="submit" class="delete" value="Delete Question">
     </form>
 </div>
