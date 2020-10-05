@@ -2,34 +2,29 @@
 
 {%  block content  %}
 
-<h2>Generate A New Quiz!</h2>
+<h2>Make A New Quiz!</h2>
 
 <form action="/quizzes" method="POST">
 
     <div>
 
-        <label for="date">Date:</label>
-        <input type="text" id="date" name="date">
+        <label for="date">Quiz Date:</label>
+        <input type="date" id="date" name="date">
         <br>
 
 
         <label for="number_of_questions">Number of Questions:</label>
         <select name="number_of_questions" id="number_of_questions">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+            <option value="please_select" selected disabled>Please Select</option>
+            <option value="1">5</option>
+            <option value="2">10</option>
+            <option value="3">15</option>
+            <option value="4">20</option>
         </select>
         <br>
 
 
-        <label for="difficulty">Difficulty:</label>
+        <label for="difficulty">Difficulty Level:</label>
         <select name="difficulty" id="difficulty_id">
             {%  for difficulty in all_difficulties  %}
             <option value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
@@ -38,7 +33,7 @@
         <br>
 
 
-        <label for="topic">Topic:</label>
+        <label for="topic">Specialist Subject:</label>
         <select name="topic" id="topic_id">
             {%  for topic in all_topics  %}
             <option value="{{  topic.id  }}">{{  topic.name  }}</option>

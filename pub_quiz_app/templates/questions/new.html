@@ -4,11 +4,18 @@
 
 <h2>Add a question to the archive.</h2>
 
+All questions must be multiple choice.
+<br>
+You must put answers which are incorrect into the alternate answer fields.
+<br>
+<br>
+<hr>
+<br>
 <form action="/questions" method="POST">
 
     <div>
 
-        <label for="the_question">Question:</label>
+        <label for="the_question">The Question:</label>
         <input type="text" id="the_question" name="the_question">
         <br>
 
@@ -28,12 +35,20 @@
         <input type="text" id="alt_ans_3" name="alt_ans_3">
         <br>
 
-        <label for="difficulty">Difficulty Level:</label>
-        <input type="select" id="difficulty" name="difficulty">
+        <label for="difficulty">Difficulty:</label>
+        <select name="difficulty" id="difficulty_id">
+            {%  for difficulty in all_difficulties  %}
+            <option value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
+            {%  endfor  %}
+        </select>
         <br>
 
-        <label for="topic">Question Topic:</label>
-        <input type="select" id="topic" name="topic">
+        <label for="topic">Topic:</label>
+        <select name="topic" id="topic_id">
+            {%  for topic in all_topics  %}
+            <option value="{{  topic.id  }}">{{  topic.name  }}</option>
+            {%  endfor  %}
+        </select>
         <br>
 
         <input type="submit">

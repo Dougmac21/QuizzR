@@ -91,7 +91,7 @@ question_repository.save(question_006)
 question_007 = Question("Who painted The Salvator Mundi?", "Leonardo da Vinci", "Vincent van Gogh", "Andy Worhol", "El Greco", "HARD", "Art", False)
 question_repository.save(question_007)
 
-question_008 = Question("Whhat was the first song played on BBC Radio 1?", "Flowers in The Rain", "The Sound of Music", "She Loves Me", "Time After Time", "HARD", "Music", False)
+question_008 = Question("What was the first song played on BBC Radio 1?", "Flowers in The Rain", "The Sound of Music", "She Loves Me", "Time After Time", "HARD", "Music", False)
 question_repository.save(question_008)
 
 question_repository.select_all()
