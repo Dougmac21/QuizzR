@@ -89,7 +89,7 @@ def update_quiz(id):
 
 
 #show
-@questions_blueprint.route("/quizzes/<id>", methods=["GET"])
+@quizzes_blueprint.route("/quizzes/<id>", methods=["GET"])
 def show_quiz(id):
     quiz = quiz_repository.select(id)
     return render_template('/quizzes/show.html', quiz=quiz)
