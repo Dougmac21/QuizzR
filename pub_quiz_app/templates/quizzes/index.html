@@ -53,10 +53,62 @@
 {%  for quiz in all_quizzes  %}
 <div class="id">
     <div class="content">
-        {{  quiz.question_list  }}
+        {{  quiz.the_question_list  }}
     </div>
+{%  endfor  %}
+<br>
+
+{%  for quiz in all_quizzes  %}
+<div class="id">
+    <div class="content">
+        {{  quiz.correct_answer_list  }}
+    </div>
+{%  endfor  %}
+<br>
+
+{%  for quiz in all_quizzes  %}
+<div class="id">
+    <div class="content">
+        {{  quiz.alt_ans_1_list  }}
+    </div>
+{%  endfor  %}
+<br>
+    
+{%  for quiz in all_quizzes  %}
+<div class="id">
+    <div class="content">
+        {{  quiz.alt_ans_2_list  }}
+    </div>
+{%  endfor  %}
+<br>
+
+
+{%  for quiz in all_quizzes  %}
+<div class="id">
+    <div class="content">
+        {{  quiz.alt_ans_3_list  }}
+    </div>
+{%  endfor  %}
+<br>
+
+{%  for quiz in all_quizzes  %}
+<div>
+    <form action="/quizzes/{{  quiz.id  }}" method="GET">
+        <input type="submit" class="show" value="Select Quiz">
+    </form>
 </div>
 {%  endfor  %}
 <br>
+
+{%  for quiz in all_quizzes  %}
+<div>
+    <form action="/quizzes/{{  quiz.id  }}/delete" method="POST">
+        <input type="submit" class="delete" value="Delete Quiz">
+    </form>
+</div>
+{%  endfor  %}
+<br>
+
+</div>
 
 {%  endblock  %}
