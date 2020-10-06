@@ -17,7 +17,7 @@ def all_topics():
 @topics_blueprint.route("/topics/new")
 def new_topic():
     topics = topic_repository.select_all()
-    return render_template("/topics/new.html", topics=topics)
+    return render_template("/topics/new.html", all_topics=topics)
 
 
 #create
@@ -33,7 +33,7 @@ def create_topic():
 @topics_blueprint.route("/topics/<id>/edit")
 def edit_topic(id):
     topic = topic_repository.select(id)
-    return render_template("/topics/edit.html", this_topic=topic)
+    return render_template("/topics/edit.html", topic=topic)
 
 
 #update
