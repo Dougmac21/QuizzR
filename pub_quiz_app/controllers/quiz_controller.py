@@ -45,11 +45,17 @@ def create_quiz():
     topic_id = request.form["topic"]
     topic = topic_repository.select(topic_id)
 
-    the_question_list = request.form["the_question_list"]
-    correct_answer_list = request.form["correct_answer_list"]
-    alt_ans_1_list = request.form["alt_ans_1_list"]
-    alt_ans_2_list = request.form["alt_ans_2_list"]
-    alt_ans_3_list = request.form["alt_ans_3_list"]
+    # the_question_list = request.form["the_question_list"]
+    # correct_answer_list = request.form["correct_answer_list"]
+    # alt_ans_1_list = request.form["alt_ans_1_list"]
+    # alt_ans_2_list = request.form["alt_ans_2_list"]
+    # alt_ans_3_list = request.form["alt_ans_3_list"]
+
+    the_question_list = []
+    correct_answer_list = []
+    alt_ans_1_list = []
+    alt_ans_2_list = []
+    alt_ans_3_list = []
 
     new_quiz = Quiz(date, number_of_questions, difficulty, topic, the_question_list, correct_answer_list, alt_ans_1_list, alt_ans_2_list, alt_ans_3_list)
     quiz_repository.save(new_quiz)
