@@ -16,11 +16,13 @@ import repositories.quiz_repository as quiz_repository
 
 quizzes_blueprint = Blueprint("quizzes", __name__)
 
+
 #index
 @quizzes_blueprint.route("/quizzes")
 def all_quizzes():
     quizzes = quiz_repository.select_all()
     return render_template("/quizzes/index.html", all_quizzes=quizzes)
+
 
 #new
 @quizzes_blueprint.route("/quizzes/new")
@@ -29,6 +31,7 @@ def new_quiz():
     topics = topic_repository.select_all()
     difficulties = difficulty_repository.select_all()
     return render_template("/quizzes/new.html", all_quizzes=quizzes, all_topics=topics, all_difficulties=difficulties)
+
 
 #create
 @quizzes_blueprint.route("/quizzes", methods=["POST"])
@@ -48,6 +51,7 @@ def create_quiz():
     quiz_repository.save(new_quiz)
     return redirect("/quizzes")
 
+
 #edit
 @quizzes_blueprint.route("/quizzes/<id>/edit")
 def edit_quiz(id):
@@ -55,6 +59,7 @@ def edit_quiz(id):
     topics = topic_repository.select_all()
     difficulties = difficulty_repository.select_all()
     return render_template("/quizzes/edit.html", quiz=quiz, all_topics=topics, all_difficulties=difficulties)
+
 
 #update
 @quizzes_blueprint.route("/quizzes/<id>", methods = ["POST"])
@@ -72,6 +77,14 @@ def update_quiz(id):
     quiz = Quiz(date, number_of_questions, difficulty, topic, question_list, id)
     quiz_repository.update(quiz)
     return redirect("/quizzes")
+
+
+#show
+@questions_blueprint.route("/quizzes/<id>", methods=["GET"])
+def show_quiz(id):
+    quiz = quiz_repository.select(id)
+    return render_template('/quizzes/show.html', quiz=quiz)
+
 
 #delete
 @quizzes_blueprint.route("/quizzes/<id>/delete", methods=["POST"])

@@ -1,3 +1,34 @@
 {% extends 'base.html' %}
 
-quizzes edit page
+{%  block content  %}
+
+<h2>Revise a Quiz</h2>
+
+<form action="/quizzes/{{  quiz.id  }}" method="POST">
+
+    <div>
+        <h1>{{quiz.id}}</h1>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" value="{{  quiz.date  }}">
+        <br>
+
+        <label for="number_of_questions">Number of Questions:</label>
+        <input type="text" id="number_of_questions" name="number_of_questions" value="{{  quiz.number_of_questions  }}">
+        <br>
+
+        <label for="difficulty">Difficulty:</label>
+        <input type="text" id="difficulty" name="difficulty" value="{{  quiz.difficulty.level  }}">
+        <br>
+
+        <label for="topic">Topic:</label>
+        <input type="text" id="topic" name="topic" value="{{  quiz.topic.name  }}">
+        <br>
+
+    </div>
+    <br>
+    <input type="submit" class="update" value="Confirm Changes">
+</form>
+<hr>
+
+
+{%  endblock  %}
