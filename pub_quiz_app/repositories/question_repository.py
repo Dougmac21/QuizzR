@@ -64,4 +64,3 @@ def update(question):
     sql = "UPDATE questions SET (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty_id, topic_id, used) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty.id, question.topic.id, question.used, question.id]
     run_sql(sql, values)
-

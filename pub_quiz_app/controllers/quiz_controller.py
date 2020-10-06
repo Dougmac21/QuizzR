@@ -45,19 +45,9 @@ def create_quiz():
     topic_id = request.form["topic"]
     topic = topic_repository.select(topic_id)
 
-    # the_question_list = request.form["the_question_list"]
-    # correct_answer_list = request.form["correct_answer_list"]
-    # alt_ans_1_list = request.form["alt_ans_1_list"]
-    # alt_ans_2_list = request.form["alt_ans_2_list"]
-    # alt_ans_3_list = request.form["alt_ans_3_list"]
+    question_list = []
 
-    the_question_list = []
-    correct_answer_list = []
-    alt_ans_1_list = []
-    alt_ans_2_list = []
-    alt_ans_3_list = []
-
-    new_quiz = Quiz(date, number_of_questions, difficulty, topic, the_question_list, correct_answer_list, alt_ans_1_list, alt_ans_2_list, alt_ans_3_list)
+    new_quiz = Quiz(date, number_of_questions, difficulty, topic, question_list)
     quiz_repository.save(new_quiz)
     return redirect("/quizzes")
 
@@ -83,13 +73,9 @@ def update_quiz(id):
     topic_id = request.form["topic_id"]
     topic = topic_repository.select(topic_id)
 
-    the_question_list = request.form["the_question_list"]
-    correct_answer_list = request.form["correct_answer_list"]
-    alt_ans_1_list = request.form["alt_ans_1_list"]
-    alt_ans_2_list = request.form["alt_ans_2_list"]
-    alt_ans_3_list = request.form["alt_ans_3_list"]
+    question_list = request.form["question_list"]
 
-    quiz = Quiz(date, number_of_questions, difficulty, topic, the_question_list, correct_answer_list, alt_ans_1_list, alt_ans_2_list, alt_ans_3_list, id)
+    quiz = Quiz(date, number_of_questions, difficulty, topic, question_list, id)
     quiz_repository.update(quiz)
     return redirect("/quizzes")
 
@@ -106,6 +92,3 @@ def show_quiz(id):
 def delete_quiz(id):
     quiz_repository.delete(id)
     return redirect("/quizzes")
-
-
-

@@ -1,8 +1,4 @@
-
-
 ###     ###      topics controller deactivated due to project scope change. ###     ###
-
-
 
 
 

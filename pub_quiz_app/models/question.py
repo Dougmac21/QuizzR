@@ -10,6 +10,3 @@ class Question():
         self.topic = topic
         self.used = used
         self.id = id
-
-    # def mark_used(self):
-    #     self.used = True

@@ -2,17 +2,7 @@
 
 {%  block content  %}
 
-
 <h2>Quizzes</h2>
-<!-- 
-{%  for quiz in all_quizzes  %}
-<div class="id">
-    <div class="content">
-        {{  quiz.id  }}
-    </div>
-</div>
-{%  endfor  %}
-<br> -->
 
 {%  for quiz in all_quizzes  %}
 <div class="id">
@@ -53,40 +43,7 @@
 {%  for quiz in all_quizzes  %}
 <div class="id">
     <div class="content">
-        {{  quiz.the_question_list  }}
-    </div>
-{%  endfor  %}
-<br>
-
-{%  for quiz in all_quizzes  %}
-<div class="id">
-    <div class="content">
-        {{  quiz.correct_answer_list  }}
-    </div>
-{%  endfor  %}
-<br>
-
-{%  for quiz in all_quizzes  %}
-<div class="id">
-    <div class="content">
-        {{  quiz.alt_ans_1_list  }}
-    </div>
-{%  endfor  %}
-<br>
-    
-{%  for quiz in all_quizzes  %}
-<div class="id">
-    <div class="content">
-        {{  quiz.alt_ans_2_list  }}
-    </div>
-{%  endfor  %}
-<br>
-
-
-{%  for quiz in all_quizzes  %}
-<div class="id">
-    <div class="content">
-        {{  quiz.alt_ans_3_list  }}
+        {{  quiz.question_list  }}
     </div>
 {%  endfor  %}
 <br>

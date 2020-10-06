@@ -100,7 +100,7 @@ question_repository.save(question_008)
 
 
 
-quiz_01 = Quiz("2020-01-01", 5, difficulty_1, topic_00, [], [], [], [], [])
+quiz_01 = Quiz("2020-01-01", 5, difficulty_1, topic_00, [])
 quiz_repository.save(quiz_01)
 
 

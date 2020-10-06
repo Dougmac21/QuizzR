@@ -29,7 +29,7 @@ def select(id):
     topic = topic_repository.select(result["topic_id"])
 
     if result is not None:
-        quiz = Quiz(result["date"], result["number_of_questions"], difficulty, topic, result["the_question_list"], result["correct_answer_list"], result["alt_ans_1_list"], result["alt_ans_2_list"], result["alt_ans_3_list"])
+        quiz = Quiz(result["date"], result["number_of_questions"], difficulty, topic, result["question_list"])
     return quiz
 
 #select-all
@@ -40,7 +40,7 @@ def select_all():
     for result in results:
         difficulty = difficulty_repository.select(result["difficulty_id"])
         topic = topic_repository.select(result["topic_id"])
-        quiz = Quiz(result["date"], result["number_of_questions"], difficulty, topic, result["the_question_list"], result["correct_answer_list"], result["alt_ans_1_list"], result["alt_ans_2_list"], result["alt_ans_3_list"], result["id"])
+        quiz = Quiz(result["date"], result["number_of_questions"], difficulty, topic, result["question_list"], result["id"])
         quizzes.append(quiz)
     return quizzes
 
@@ -57,6 +57,6 @@ def delete_all():
 
 #update
 def update(quiz):
-    sql = "UPDATE quizzes SET (date, number_of_questions, difficulty, topic, the_question_list, correct_answer_list, alt_ans_1_list, alt_ans_2_list, alt_ans_3_list) = (%s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [quiz.date, quiz.number_of_questions, quiz.difficulty.id, quiz.topic.id, quiz.the_question_list, quiz.correct_answer_list, quiz.alt_ans_1_list, quiz.alt_ans_2_list, quiz.alt_ans_3_list, quiz.id]
+    sql = "UPDATE quizzes SET (date, number_of_questions, difficulty, topic, question_list) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [quiz.date, quiz.number_of_questions, quiz.difficulty.id, quiz.topic.id, quiz.question_list, quiz.id]
     run_sql(sql, values)

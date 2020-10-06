@@ -13,6 +13,7 @@ def save(topic):
     topic.id = id
     return topic
 
+
 #select
 def select(id):
     sql = "SELECT * FROM topics WHERE id = %s"
@@ -20,6 +21,7 @@ def select(id):
     result = run_sql(sql, values)[0]
     topic = Topic(result["name"], result["id"])
     return topic
+
 
 #select-all
 def select_all():
@@ -33,16 +35,19 @@ def select_all():
         all_topics.append(topic)
     return all_topics
 
+
 #delete
 def delete(id):
     sql = "DELETE FROM topics WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
+
 #delete-all
 def delete_all():
     sql = "DELETE FROM topics"
     run_sql(sql)
+
 
 #update
 def update(topic):
