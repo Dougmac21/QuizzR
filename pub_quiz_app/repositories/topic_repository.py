@@ -13,20 +13,21 @@ def save(topic):
     topic.id = id
     return topic
 
-
 #select
 def select(id):
     sql = "SELECT * FROM topics WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    topic = Topic(result["topic"], result["id"])
+    topic = Topic(result["name"], result["id"])
     return topic
 
 #select-all
 def select_all():
     all_topics = []
+
     sql = "SELECT * FROM topics"
     results = run_sql(sql)
+
     for result in results:
         topic = Topic(result["name"], result["id"])
         all_topics.append(topic)

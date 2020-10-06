@@ -34,10 +34,10 @@ def create_question():
     alt_ans_2 = request.form["alt_ans_2"]
     alt_ans_3 = request.form["alt_ans_3"]
 
-    difficulty_id = request.form["difficulty_id"]
+    difficulty_id = request.form["difficulty"]
     difficulty = difficulty_repository.select(difficulty_id)
 
-    topic_id = request.form["topic_id"]
+    topic_id = request.form["topic"]
     topic = topic_repository.select(topic_id)
 
     used = False
@@ -64,10 +64,10 @@ def update_question(id):
     alt_ans_2 = request.form["alt_ans_2"]
     alt_ans_3 = request.form["alt_ans_3"]
 
-    difficulty_id = request.form["difficulty_id"]
+    difficulty_id = request.form["difficulty"]
     difficulty = difficulty_repository.select(difficulty_id)
 
-    topic_id = request.form["topic_id"]
+    topic_id = request.form["topic"]
     topic = topic_repository.select(topic_id)
 
     question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, id)

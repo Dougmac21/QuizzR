@@ -36,10 +36,10 @@ def create_quiz():
     date = request.form["date"]
     number_of_questions = request.form["number_of_questions"]
 
-    difficulty_id = request.form["difficulty_id"]
+    difficulty_id = request.form["difficulty"]
     difficulty = difficulty_repository.select(difficulty_id)
 
-    topic_id = request.form["topic_id"]
+    topic_id = request.form["topic"]
     topic = topic_repository.select(topic_id)
 
     question_list = request.form["question_list"]
@@ -62,14 +62,13 @@ def update_quiz(id):
     date = request.form["date"]
     number_of_questions = request.form["number_of_questions"]
 
-    difficulty_id = request.form["difficulty_id"]
+    difficulty_id = request.form["difficulty"]
     difficulty = difficulty_repository.select(difficulty_id)
 
-    topic_id = request.form["topic_id"]
+    topic_id = request.form["topic"]
     topic = topic_repository.select(topic_id)
 
     question_list = request.form["question_list"]
-    
     quiz = Quiz(date, number_of_questions, difficulty, topic, question_list, id)
     quiz_repository.update(quiz)
     return redirect("/quizzes")

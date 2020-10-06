@@ -24,8 +24,10 @@ def select(id):
 #select-all
 def select_all():
     all_difficulties = []
+
     sql = "SELECT * FROM difficulties"
     results = run_sql(sql)
+    
     for result in results:
         difficulty = Difficulty(result["level"], result["id"])
         all_difficulties.append(difficulty)
