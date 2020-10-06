@@ -14,8 +14,8 @@ import repositories.quiz_repository as quiz_repository
 
 #save
 def save(quiz):
-    sql = "INSERT INTO quizzes (date, number_of_questions, difficulty_id, topic_id, the_question_list, correct_answer_list, alt_ans_1_list, alt_ans_2_list, alt_ans_3_list) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [quiz.date, quiz.number_of_questions, quiz.difficulty.id, quiz.topic.id, quiz.the_question_list, quiz.correct_answer_list, quiz.alt_ans_1_list, quiz.alt_ans_2_list, quiz.alt_ans_3_list]
+    sql = "INSERT INTO quizzes (date, number_of_questions, difficulty_id, topic_id, question_list) VALUES (%s, %s, %s, %s, %s) RETURNING id"
+    values = [quiz.date, quiz.number_of_questions, quiz.difficulty.id, quiz.topic.id, quiz.question_list]
     results = run_sql(sql, values)
     id = results[0]['id']
     quiz.id = id

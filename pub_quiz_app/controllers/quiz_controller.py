@@ -12,10 +12,9 @@ import repositories.question_repository as question_repository
 from models.quiz import Quiz
 import repositories.quiz_repository as quiz_repository
 
-
-
 quizzes_blueprint = Blueprint("quizzes", __name__)
 
+import random
 
 #index
 @quizzes_blueprint.route("/quizzes")

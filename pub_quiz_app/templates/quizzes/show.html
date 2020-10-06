@@ -16,10 +16,10 @@
     <p>Quiz Topic: {{  quiz.topic.name  }}</p>
     <br>
 
-    {%  for the_question in the_question_list  %}
+    {%  for question in question_list  %}
     <div class="the_question">
         <div class="content">
-            {{  quiz.the_question  }}
+            {{  quiz.question_list  }}
         </div>
     </div>
     {%  endfor  %}
