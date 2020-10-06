@@ -28,7 +28,7 @@ CREATE TABLE questions (
 
 CREATE TABLE quizzes (
     id SERIAL PRIMARY KEY,
-    date VARCHAR(255),
+    date DATE,
     number_of_questions INT,
     difficulty_id INT REFERENCES difficulties(id),
     topic_id INT REFERENCES topics(id),
