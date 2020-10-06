@@ -30,9 +30,9 @@
 
         <label for="difficulty_id">Difficulty:</label>
         <select id="difficulty_id" name="difficulty_id">
-            <option value="{{  question.difficulty.id  }}">{{  question.difficulty.level  }}</option>
+            <option selected value="{{  question.difficulty.id  }}">{{  question.difficulty.level  }}</option>
             {%  for difficulty in all_difficulties  %}
-            {% if question.difficulty != difficulty.level %}
+            {% if question.difficulty.level != difficulty.level %}
                 <option value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
             {% endif %}
             {%  endfor  %}
@@ -41,9 +41,9 @@
 
         <label for="topic_id">Topic:</label>
         <select id="topic_id" name="topic_id">
-            <option value="{{  question.topic.id  }}">{{  question.topic.name  }}</option>
+            <option selected value="{{  question.topic.id  }}">{{  question.topic.name  }}</option>
             {%  for topic in all_topics  %}
-            {%  if question.topic != topic.name  %}
+            {%  if question.topic.name != topic.name  %}
                 <option value="{{  topic.id  }}">{{  topic.name  }}</option>
             {%  endif  %}
             {%  endfor  %}
