@@ -4,7 +4,7 @@
 
 
 <h2>Quizzes</h2>
-
+<!-- 
 {%  for quiz in all_quizzes  %}
 <div class="id">
     <div class="content">
@@ -12,7 +12,7 @@
     </div>
 </div>
 {%  endfor  %}
-<br>
+<br> -->
 
 {%  for quiz in all_quizzes  %}
 <div class="id">
@@ -35,7 +35,7 @@
 {%  for quiz in all_quizzes  %}
 <div class="id">
     <div class="content">
-        {{  quiz.difficulty  }}
+        {{  quiz.difficulty.level  }}
     </div>
 </div>
 {%  endfor  %}
@@ -44,7 +44,7 @@
 {%  for quiz in all_quizzes  %}
 <div class="id">
     <div class="content">
-        {{  quiz.topic  }}
+        {{  quiz.topic.name  }}
     </div>
 </div>
 {%  endfor  %}

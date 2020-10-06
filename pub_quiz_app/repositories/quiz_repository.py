@@ -14,7 +14,7 @@ import repositories.quiz_repository as quiz_repository
 
 #save
 def save(quiz):
-    sql = "INSERT INTO quizzes (date, number_of_questions, difficulty, topic, question_list) VALUES (%s, %s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO quizzes (date, number_of_questions, difficulty_id, topic_id, question_list) VALUES (%s, %s, %s, %s, %s) RETURNING id"
     values = [quiz.date, quiz.number_of_questions, quiz.difficulty.id, quiz.topic.id, quiz.question_list]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -37,8 +37,8 @@ def select_all():
     sql = "SELECT * FROM quizzes"
     results = run_sql(sql)
     for result in results:
-        difficulty = difficulty_repository.select(result["difficulty"])
-        topic = topic_repository.select(result["topic"])
+        difficulty = difficulty_repository.select(result["difficulty_id"])
+        topic = topic_repository.select(result["topic_id"])
         quiz = Quiz(result["date"], result["number_of_questions"], difficulty, topic, result["question_list"], result["id"])
         quizzes.append(quiz)
     return quizzes

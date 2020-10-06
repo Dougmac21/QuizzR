@@ -98,8 +98,17 @@ question_repository.save(question_008)
 
 
 
-# quiz_01 = Quiz("2020-01-01", 5, difficulty_1, topic_00, [])
-# quiz_repository.save(quiz_01)
+quiz_01 = Quiz("2020-01-01", 5, difficulty_1, topic_00, [])
+quiz_repository.save(quiz_01)
+
+quiz_02 = Quiz("2020-01-02", 10, difficulty_2, topic_01, [])
+quiz_repository.save(quiz_02)
+
+quiz_03 = Quiz("2020-01-03", 15, difficulty_3, topic_02, [])
+quiz_repository.save(quiz_03)
+
+quiz_04 = Quiz("2020-01-04", 20, difficulty_4, topic_03, [])
+quiz_repository.save(quiz_04)
 
 
 
@@ -107,7 +116,7 @@ question_repository.save(question_008)
 topic_repository.select_all()
 difficulty_repository.select_all()
 question_repository.select_all()
-# quiz_repository.select_all()
+quiz_repository.select_all()
 
 
 

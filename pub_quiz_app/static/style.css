@@ -1,7 +1,44 @@
-body{
+#grid-container {
+  display: grid;
+  grid-template-areas: 'header header' 'container container' 'footer footer';
+  grid-template-columns: 3fr 7fr;
+}
+
+header {
+  /* ... */
+  grid-area: header;
+}
+
+.container {
+  /* ... */
+  grid-area: container;
+}
+
+footer {
+  /* ... */
+  grid-area: footer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body{
     font-family: "Helvetica Neue", arial, sans-serif; font-size: 16px;
   }
   
+
   .question {
     border: 2px solid #ccc;
     width: 300px;
@@ -70,4 +107,4 @@ body{
     display: flex;
     line-height: 20px;
     margin-bottom: 12px;
-  }
+  } */

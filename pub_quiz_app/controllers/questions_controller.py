@@ -70,8 +70,11 @@ def update_question(id):
     topic_id = request.form["topic_id"]
     topic = topic_repository.select(topic_id)
 
-    question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, id)
+    used = None
+
+    question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, used, id)
     question_repository.update(question)
+
     return redirect("/questions")
 
 #show
