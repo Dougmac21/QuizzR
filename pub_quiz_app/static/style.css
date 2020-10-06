@@ -1,0 +1,73 @@
+body{
+    font-family: "Helvetica Neue", arial, sans-serif; font-size: 16px;
+  }
+  
+  .question {
+    border: 2px solid #ccc;
+    width: 300px;
+    min-height: 32px;
+    padding: 8px;
+    display: flex;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
+
+  .correct_answer {
+    border: 2px solid #ccc;
+    width: 250px;
+    min-height: 32px;
+    padding: 8px;
+    display: flex;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
+
+  .alt_ans_1 {
+    border: 2px solid #ccc;
+    width: 250px;
+    min-height: 32px;
+    padding: 8px;
+    display: flex;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
+
+  .alt_ans_2 {
+    border: 2px solid #ccc;
+    width: 250px;
+    min-height: 32px;
+    padding: 8px;
+    display: flex;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
+
+  .alt_ans_3 {
+    border: 2px solid #ccc;
+    width: 250px;
+    min-height: 32px;
+    padding: 8px;
+    display: flex;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
+
+  .difficulty {
+    border: 2px solid #ccc;
+    width: 80px;
+    min-height: 32px;
+    padding: 8px;
+    display: flex;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
+
+  .topic {
+    border: 2px solid #ccc;
+    width: 150px;
+    min-height: 32px;
+    padding: 8px;
+    display: flex;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
