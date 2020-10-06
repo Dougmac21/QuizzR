@@ -40,7 +40,7 @@ def select_all():
     for result in results:
         difficulty = difficulty_repository.select(result["difficulty_id"])
         topic = topic_repository.select(result["topic_id"])
-        quiz = Quiz(result["date"], result["number_of_questions"], difficulty, topic, result["question_list"], result["correct_answer_list"], result["alt_ans_1_list"], result["alt_ans_2_list"], result["alt_ans_3_list"], result["id"])
+        quiz = Quiz(result["date"], result["number_of_questions"], difficulty, topic, result["the_question_list"], result["correct_answer_list"], result["alt_ans_1_list"], result["alt_ans_2_list"], result["alt_ans_3_list"], result["id"])
         quizzes.append(quiz)
     return quizzes
 

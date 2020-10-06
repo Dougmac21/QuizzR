@@ -1,0 +1,71 @@
+{%  extends 'base.html'  %}
+
+{%  block content  %}
+
+<div>
+    <hr>
+    <p>Quiz Date: {{  quiz.date  }}</p>
+    <br>
+    
+    <p>Number of Questions: {{  quiz.number_of_questions  }}</p>
+    <br>
+
+    <p>Difficulty Level: {{  quiz.difficulty.level  }}</p>
+    <br>
+
+    <p>Quiz Topic: {{  quiz.topic.name  }}</p>
+    <br>
+
+    {%  for the question in the_question_list  %}
+    <div class="the_question">
+        <div class="content">
+            {{  quiz.the_question  }}
+        </div>
+    </div>
+    {%  endfor  %}
+    <br>
+
+    {%  for correct_answer in correct_answer_list  %}
+    <div class="correct_answer">
+        <div class="content">
+            {{  quiz.correct_answer  }}
+        </div>
+    </div>
+    {%  endfor  %}
+    <br>
+
+    {%  for alt_ans_1 in alt_ans_1_list  %}
+    <div class="alt_ans_1">
+        <div class="content">
+            {{  quiz.alt_ans_1  }}
+        </div>
+    </div>
+    {%  endfor  %}
+    <br>
+
+    {%  for alt_ans_2 in alt_ans_2_list  %}
+    <div class="alt_ans_2">
+        <div class="content">
+            {{  quiz.alt_ans_2  }}
+        </div>
+    </div>
+    {%  endfor  %}
+    <br>
+
+    {%  for alt_ans_3 in alt_ans_3_list  %}
+    <div class="alt_ans_3">
+        <div class="content">
+            {{  quiz.alt_ans_3  }}
+        </div>
+    </div>
+    {%  endfor  %}
+    <br>
+
+    <form action="/quizzes/{{  quiz.id  }}/edit" method="GET">
+        <input type="submit" class="edit" value="Edit Quiz">
+    </form>
+    <hr>
+</div>
+
+{%  endblock  %}
+

@@ -15,18 +15,19 @@
 
         <label for="number_of_questions">Number of Questions:</label>
         <select name="number_of_questions" id="number_of_questions">
-            <option value="please_select" selected disabled>Please Select</option>
+            <option value="please_select" selected disabled>--Please Select--</option>
             <option value="1">5</option>
             <option value="2">10</option>
             <option value="3">15</option>
             <option value="4">20</option>
+            <option value="4">25</option>
         </select>
         <br>
 
 
-        <label for="difficulty">Select Difficulty Level:</label>
+        <label for="difficulty">Difficulty Level:</label>
         <select name="difficulty" id="difficulty_id">
-            <option selected disabled>--Mixed--</option>
+            <option selected disabled>--Please Select--</option>
             {%  for difficulty in all_difficulties  %}
             <option value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
             {%  endfor  %}
@@ -34,9 +35,9 @@
         <br>
 
 
-        <label for="topic">Select Specialist Subject:</label>
+        <label for="topic">Specialist Subject:</label>
         <select name="topic" id="topic_id">
-            <option selected disabled>--Mixed--</option>
+            <option selected disabled>--Please Select--</option>
             {%  for topic in all_topics  %}
             <option value="{{  topic.id  }}">{{  topic.name  }}</option>
             {%  endfor  %}
