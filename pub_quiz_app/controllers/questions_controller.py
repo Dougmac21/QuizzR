@@ -56,7 +56,7 @@ def edit_question(id):
 
 
 #update
-@questions_blueprint.route("/questions/<id>", methods=["PUT"])
+@questions_blueprint.route("/questions/<id>", methods=["POST"])
 def update_question(id):
     the_question = request.form["the_question"]
     correct_answer = request.form["correct_answer"]
@@ -64,10 +64,10 @@ def update_question(id):
     alt_ans_2 = request.form["alt_ans_2"]
     alt_ans_3 = request.form["alt_ans_3"]
 
-    difficulty_id = request.form["difficulty"]
+    difficulty_id = request.form["difficulty_id"]
     difficulty = difficulty_repository.select(difficulty_id)
 
-    topic_id = request.form["topic"]
+    topic_id = request.form["topic_id"]
     topic = topic_repository.select(topic_id)
 
     question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, id)
@@ -75,7 +75,10 @@ def update_question(id):
     return redirect("/questions")
 
 #show
-# show goes here
+@questions_blueprint.route("/questions/<id>", methods=["GET"])
+def show_question(id):
+    question = question_repository.select(id)
+    return render_template('/questions/show.html', question=question)
 
 
 #delete

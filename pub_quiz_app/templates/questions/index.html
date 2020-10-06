@@ -88,12 +88,21 @@
 
 {%  for question in all_questions  %}
 <div>
+    <form action="/questions/{{  question.id  }}" method="GET">
+        <input type="submit" class="show" value="Select Question">
+    </form>
+</div>
+{%  endfor  %}
+<br>
+<!-- 
+{%  for question in all_questions  %}
+<div>
     <form action="/questions/{{  question.id  }}/edit" method="GET">
         <input type="submit" class="edit" value="Edit Question">
     </form>
 </div>
 {%  endfor  %}
-<br>
+<br> -->
 
 {%  for question in all_questions  %}
 <div>

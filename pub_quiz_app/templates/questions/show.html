@@ -1,28 +1,20 @@
-{%  extends base.html  %}
+{%  extends 'base.html'  %}
 
 {%  block content  %}
 
 <div>
     <hr>
-    <p>{{  question.the_question  }}</p>
+    <p>Question: {{  question.the_question  }}</p>
+    <p>Correct Answer: {{  question.correct_answer  }}</p>
+    <p>Alternate Answer 1: {{  question.alt_ans_1  }}</p>
+    <p>Alternate Answer 2: {{  question.alt_ans_2  }}</p>
+    <p>Alternate Answer 3: {{  question.alt_ans_3  }}</p>
+    <p>Difficulty Level: {{  question.difficulty.level  }}</p>
+    <p>Question Topic: {{  question.topic.name  }}</p>
     <br>
-    <p>{{  question.correct_answer  }}</p>
-    <br>
-    <p>{{  question.alt_ans_1  }}</p>
-    <br>
-    <p>{{  question.alt_ans_2  }}</p>
-    <br>
-    <p>{{  question.alt_ans_3  }}</p>
-    <br>
-    <p>{{  question.difficulty.level  }}</p>
-    <br>
-    <p>{{  question.topic.name  }}</p>
-    <br>
-    <p>{{  question.used  }}</p>
-    <br>
-    <br>
-    <p><a href="/questions/{{  question.id  }}/edit">Edit Question</a></p>
-    <br>
+    <form action="/questions/{{  question.id  }}/edit" method="GET">
+        <input type="submit" class="edit" value="Edit Question">
+    </form>
     <hr>
 </div>
 
