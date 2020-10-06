@@ -1,0 +1,30 @@
+{%  extends base.html  %}
+
+{%  block content  %}
+
+<div>
+    <hr>
+    <p>{{  question.the_question  }}</p>
+    <br>
+    <p>{{  question.correct_answer  }}</p>
+    <br>
+    <p>{{  question.alt_ans_1  }}</p>
+    <br>
+    <p>{{  question.alt_ans_2  }}</p>
+    <br>
+    <p>{{  question.alt_ans_3  }}</p>
+    <br>
+    <p>{{  question.difficulty.level  }}</p>
+    <br>
+    <p>{{  question.topic.name  }}</p>
+    <br>
+    <p>{{  question.used  }}</p>
+    <br>
+    <br>
+    <p><a href="/questions/{{  question.id  }}/edit">Edit Question</a></p>
+    <br>
+    <hr>
+</div>
+
+{%  endblock  %}
+

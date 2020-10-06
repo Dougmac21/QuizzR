@@ -88,7 +88,7 @@
 
 {%  for question in all_questions  %}
 <div>
-    <form action="/questions/{{  question.id  }}/edit">
+    <form action="/questions/{{  question.id  }}/edit" method="GET">
         <input type="submit" class="edit" value="Edit Question">
     </form>
 </div>

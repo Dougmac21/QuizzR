@@ -56,7 +56,7 @@ def edit_question(id):
 
 
 #update
-@questions_blueprint.route("/questions/<id>", methods=["POST"])
+@questions_blueprint.route("/questions/<id>", methods=["PUT"])
 def update_question(id):
     the_question = request.form["the_question"]
     correct_answer = request.form["correct_answer"]
@@ -73,6 +73,9 @@ def update_question(id):
     question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, id)
     question_repository.update(question)
     return redirect("/questions")
+
+#show
+# show goes here
 
 
 #delete
