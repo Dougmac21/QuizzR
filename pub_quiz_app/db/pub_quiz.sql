@@ -32,5 +32,10 @@ CREATE TABLE quizzes (
     number_of_questions INT,
     difficulty_id INT REFERENCES difficulties(id),
     topic_id INT REFERENCES topics(id),
-    question_list TEXT
+    the_question_list TEXT,
+    correct_answer_list TEXT,
+    alt_ans_1_list TEXT,
+    alt_ans_2_list TEXT,
+    alt_ans_3_list TEXT
+    -- ALTER TABLE ADD COLUMN FOR EACH QUESTION/ANS1/2/3/4
 );
