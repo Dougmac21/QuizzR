@@ -5,15 +5,6 @@
 
 <h2>Questions</h2>
 
-<!-- {%  for question in all_questions  %}
-<div class="id">
-    <div class="content">
-        {{  question.id  }}
-    </div>
-</div>
-{%  endfor  %}
-<br> -->
-
 {%  for question in all_questions  %}
 <div class="question">
     <div class="content">
@@ -76,15 +67,6 @@
 </div>
 {%  endfor  %}
 <br>
-<!-- 
-{%  for question in all_questions  %}
-<div class="used">
-    <div class="content">
-        {{  question.used  }}
-    </div>
-</div>
-{%  endfor  %}
-<br> -->
 
 {%  for question in all_questions  %}
 <div>
@@ -94,15 +76,6 @@
 </div>
 {%  endfor  %}
 <br>
-<!-- 
-{%  for question in all_questions  %}
-<div>
-    <form action="/questions/{{  question.id  }}/edit" method="GET">
-        <input type="submit" class="edit" value="Edit Question">
-    </form>
-</div>
-{%  endfor  %}
-<br> -->
 
 {%  for question in all_questions  %}
 <div>

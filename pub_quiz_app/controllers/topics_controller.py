@@ -10,7 +10,7 @@ topics_blueprint = Blueprint("topics", __name__)
 @topics_blueprint.route("/topics")
 def all_topics():
     topics = topic_repository.select_all()
-    return render_template("/topics/index.html", all_topics=topics)     # where does this all_topics come from?
+    return render_template("/topics/index.html", all_topics=topics)
 
 
 #new

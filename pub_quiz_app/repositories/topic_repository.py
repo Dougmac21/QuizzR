@@ -25,15 +25,15 @@ def select(id):
 
 #select-all
 def select_all():
-    all_topics = []
+    topics = []
 
     sql = "SELECT * FROM topics"
     results = run_sql(sql)
 
     for result in results:
         topic = Topic(result["name"], result["id"])
-        all_topics.append(topic)
-    return all_topics
+        topics.append(topic)
+    return topics
 
 
 #delete
