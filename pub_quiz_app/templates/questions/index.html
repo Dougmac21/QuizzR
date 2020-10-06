@@ -62,7 +62,7 @@
 {%  for question in all_questions  %}
 <div class="difficulty">
     <div class="content">
-        {{  question.difficulty  }}
+        {{  question.difficulty.level  }}
     </div>
 </div>
 {%  endfor  %}
@@ -71,7 +71,7 @@
 {%  for question in all_questions  %}
 <div class="topic">
     <div class="content">
-        {{  question.topic  }}
+        {{  question.topic.name  }}
     </div>
 </div>
 {%  endfor  %}

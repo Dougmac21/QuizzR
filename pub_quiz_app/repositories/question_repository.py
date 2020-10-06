@@ -25,8 +25,8 @@ def select(id):
     sql = "SELECT * FROM questions WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    difficulty = difficulty_repository.select(result["difficulty"])
-    topic = topic_repository.select(result["topic"])
+    difficulty = difficulty_repository.select(result["difficulty_id"])
+    topic = topic_repository.select(result["topic_id"])
     
     if result is not None:
         question = Question(result["the_question"], result["correct_answer"], result["alt_ans_1"], result["alt_ans_2"], result["alt_ans_3"], difficulty, topic, result["used"], result["id"])
