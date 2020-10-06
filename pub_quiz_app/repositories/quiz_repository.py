@@ -22,6 +22,7 @@ def save(quiz):
 
 #select
 def select(id):
+    quiz = None
     sql = "SELECT * FROM quizzes WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]

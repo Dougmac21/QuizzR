@@ -44,8 +44,11 @@ def create_quiz():
     topic_id = request.form["topic"]
     topic = topic_repository.select(topic_id)
 
-    question_list = []
-
+    
+    for question in number_of_questions:
+        question_list.append(question)
+    return question_list
+    
     new_quiz = Quiz(date, number_of_questions, difficulty, topic, question_list)
     quiz_repository.save(new_quiz)
     return redirect("/quizzes")
