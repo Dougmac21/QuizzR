@@ -3,6 +3,9 @@ from db.run_sql import run_sql
 from models.topic import Topic
 import repositories.topic_repository as topic_repository
 
+from models.user_topic import UserTopic
+import repositories.user_topic_repository as user_topic_repository
+
 from models.difficulty import Difficulty
 import repositories.difficulty_repository as difficulty_repository
 

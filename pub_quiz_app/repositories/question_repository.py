@@ -3,6 +3,9 @@ from db.run_sql import run_sql
 from models.topic import Topic
 import repositories.topic_repository as topic_repository
 
+from models.user_topic import UserTopic
+import repositories.difficulty_repository as user_topic_repository
+
 from models.difficulty import Difficulty
 import repositories.difficulty_repository as difficulty_repository
 
@@ -13,7 +16,7 @@ import repositories.question_repository as question_repository
 #save
 def save(question):
     sql = "INSERT INTO questions (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty_id, topic_id, user_topic_id used) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty.id, question.topic.id, question.user_topic.id question.used]
+    values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty.id, question.topic.id, question.user_topic.id, question.used]
     results = run_sql(sql, values)
     id = results[0]['id']
     question.id = id
@@ -43,7 +46,7 @@ def select_all():
     for result in results:
         difficulty = difficulty_repository.select(result["difficulty_id"])
         topic = topic_repository.select(result["topic_id"])
-        user_topic = user_topic_repository.selet(result["user_topic_id"])
+        user_topic = user_topic_repository.select(result["user_topic_id"])
         question = Question(result["the_question"], result["correct_answer"], result["alt_ans_1"], result["alt_ans_2"], result["alt_ans_3"], difficulty, topic, user_topic, result["used"], result["id"])
         questions.append(question)
     return questions
