@@ -2,13 +2,13 @@
 
 {%  block content  %}
 
-<h2>Edit User Topic</h2>
+<h2>Edit a Topic</h2>
 
 <form action="/user_topics/{{  user_topic.id  }}" method="POST">
 
     <div>
         <label for="name">User Topic Name:</label>
-        <input type="text" id="name" name="name" value="{{  user_topic.name  }}">
+        <input type="text" id="name" name="name" value="{{ user_topic.name  }}">
         <br>
 
     </div>

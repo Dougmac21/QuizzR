@@ -1,43 +1,29 @@
-#grid-container {
-  display: grid;
-  grid-template-areas: 'header header' 'container container' 'footer footer';
-  grid-template-columns: 3fr 7fr;
-}
+  #base_h1 {
+    margin: 0;
+    padding: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+  }
 
-header {
-  /* ... */
-  grid-area: header;
-}
-
-.container {
-  /* ... */
-  grid-area: container;
-}
-
-footer {
-  /* ... */
-  grid-area: footer;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* body{
+  body{
+    margin: 0;
     font-family: "Helvetica Neue", arial, sans-serif; font-size: 16px;
   }
-  
+
+  body > header {
+    background-color: darkslategrey;
+    color: wheat;
+  }
+
+  nav > ul {
+    list-style: none;
+    color: wheat;
+  }
+
+  nav > ul > a {
+    color: white;
+  }
+
 
   .question {
     border: 2px solid #ccc;
@@ -107,4 +93,15 @@ footer {
     display: flex;
     line-height: 20px;
     margin-bottom: 12px;
-  } */
+  }
+
+
+  body > footer {
+    background-color: darkslategrey;
+  }
+
+  body > footer > p {
+    padding: 16px;
+    color: wheat;
+    text-align: center;
+  }

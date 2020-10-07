@@ -37,7 +37,7 @@ def edit_topic(id):
 
 
 #update
-@topics_blueprint.route("/topics/<id>", methods = ["POST"])
+@topics_blueprint.route("/topics/<id>", methods=["POST"])
 def update_topic(id):
     name = request.form["name"]
     topic = Topic(name, id)

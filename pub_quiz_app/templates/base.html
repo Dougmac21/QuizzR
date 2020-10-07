@@ -5,22 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Pub Quiz Management</title>
-    <hr>
 </head>
 <body>
-
     <header>
-
-        <h1>Pub Quiz Management</h1>
+        <h1 id="base_h1">Pub Quiz Management</h1>
         <hr>
         <nav>
             <ul class="menu">
-
                 <li>
                     <a href="/">Home</a>
                 </li>
                 <br>
-            
                 Questions
                 <li>
                     <a href="/questions">Question Archive</a>
@@ -29,7 +24,6 @@
                     <a href="/questions/new">Add A Question</a>
                 </li>
                 <br>
-
                 Main Question Topics
                 <li>
                     <a href="/topics">All Topics</a>
@@ -38,7 +32,6 @@
                     <a href="/topics/new">Add A Topic</a>
                 </li>
                 <br>
-
                 User Reference Topics
                 <li>
                     <a href="/user_topics">All User Reference Topics</a>
@@ -47,7 +40,6 @@
                     <a href="/user_topics/new">Add a User Reference Topic</a>
                 </li>
                 <br>
-
                 Quizzes
                 <li>
                     <a href="/quizzes">All Quizzes</a>
@@ -56,7 +48,6 @@
                     <a href="/quizzes/new">Make A Quiz</a>
                 </li>
                 <br>
-
             </ul>
         </nav>
         <hr>
