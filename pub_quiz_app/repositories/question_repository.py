@@ -12,8 +12,8 @@ import repositories.question_repository as question_repository
 
 #save
 def save(question):
-    sql = "INSERT INTO questions (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty_id, topic_id, used) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty.id, question.topic.id, question.used]
+    sql = "INSERT INTO questions (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty_id, topic_id, user_topic_id used) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty.id, question.topic.id, question.user_topic.id question.used]
     results = run_sql(sql, values)
     id = results[0]['id']
     question.id = id
@@ -27,6 +27,8 @@ def select(id):
     result = run_sql(sql, values)[0]
     difficulty = difficulty_repository.select(result["difficulty_id"])
     topic = topic_repository.select(result["topic_id"])
+    user_topic = user_topic_repository.select(result["user_topic_id"])
+    
     
     if result is not None:
         question = Question(result["the_question"], result["correct_answer"], result["alt_ans_1"], result["alt_ans_2"], result["alt_ans_3"], difficulty, topic, result["used"], result["id"])
