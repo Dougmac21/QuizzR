@@ -1,73 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>DougsQuiz</title>
-</head>
-<body>
-    <div id="grid-container">
-        <header>
-            <h1 id="base_h1">DougsQuiz: Quiz Management Made Simple.</h1>
-            <hr>
-            <nav>
-                <ul id="menuwrapper">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>DougsQuiz</title>
+    </head>
 
-                    <li class="item_with_submenu"><a href="#">Questions</a>
-                        <ul class="submenu">
-                            <li class="subitem"><a href="/questions">Question Archive</a></li>
-                            <li class="subitem"><a href="/questions/new">Add Question</a></li>
-                        </ul>
-                    </li>                
-
-                    <li class="item_with_submenu"><a href="#">Main Topics</a>
-                        <ul class="submenu">
-                            <li class="subitem"><a href="/topics">See Topics</a></li>
-                            <li class="subitem"><a href="/topics/new">Add Topic</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="item_with_submenu"><a href="#">User Topics</a>
-                        <ul class="submenu">
-                            <li class="subitem"><a href="/user_topics">See Topics</a></li>
-                            <li class="subitem"><a href="/user_topics/new">Add Topic</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="item_with_submenu"><a href="#">Quizzes</a>
-                        <ul class="submenu">
-                            <li class="subitem"><a href="/quizzes">Quiz Archive</a></li>
-                            <li class="subitem"><a href="/quizzes/new">Create Quiz</a></li>
-                    </ul>
-                    </li>
-
-                </ul>
-            </nav>
-            <hr>
-
+    <body class="container">
+    
+        <header class="item item-1" id="base_header">
+            <h1>DougsQuiz: Quiz Management Made Simple.</h1>
         </header>
-    </div>
-
-    <div class="container">
-        {%  block content  %}
-        {%  endblock  %}
-    </div>
-
-    <footer>
         <hr>
-        <ul>
-            <li>
-                <a href="/about.html">About Us</a>
-            </li>
-            <li>
-                <a href="/contact.html">Contact Us</a>
-            </li>
-            <li>
-                <a href="/privacy.html">Privacy Policy</a>
-            </li>
-        </ul>
+
+        <nav class="item item-2" id="menuwrapper">
+            <ul>
+
+                <li class="item_with_submenu"><a href="#">Questions</a>
+                    <ul class="submenu">
+                        <li class="subitem"><a href="/questions">Question Archive</a></li>
+                        <li class="subitem"><a href="/questions/new">Add Question</a></li>
+                    </ul>
+                </li>                
+
+                <li class="item_with_submenu"><a href="#">Main Topics</a>
+                    <ul class="submenu">
+                        <li class="subitem"><a href="/topics">See Topics</a></li>
+                        <li class="subitem"><a href="/topics/new">Add Topic</a></li>
+                    </ul>
+                </li>
+
+                <li class="item_with_submenu"><a href="#">User Topics</a>
+                    <ul class="submenu">
+                        <li class="subitem"><a href="/user_topics">See Topics</a></li>
+                        <li class="subitem"><a href="/user_topics/new">Add Topic</a></li>
+                    </ul>
+                </li>
+
+                <li class="item_with_submenu"><a href="#">Quizzes</a>
+                    <ul class="submenu">
+                        <li class="subitem"><a href="/quizzes">Quiz Archive</a></li>
+                        <li class="subitem"><a href="/quizzes/new">Create Quiz</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
         <hr>
-    </footer>
-</body>
+
+        <main class="item item-3" id="block-content">
+            {%  block content  %}
+
+            {%  endblock  %}
+        </main>
+
+        <footer class="item item-4" id="base_footer">
+            <hr>
+            <ul>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact Us</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+            </ul>
+            <hr>
+        </footer>
+    
+    </body>
 </html>

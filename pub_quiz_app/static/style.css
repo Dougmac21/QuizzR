@@ -1,147 +1,215 @@
+  /* ***************************************************************************** */
+                                    /* HEAD */
+  /* ***************************************************************************** */
+  
+  body{
+    margin: 0;
+    font-family: Cambria, Cochin, serif;
+    font-size: 16px;
+  }
+
   #base_h1 {
     margin: 0;
     padding: 8px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, serif;
     text-align: center;
   }
 
-  body{
-    margin: 0;
-    font-family: "Helvetica Neue", arial, sans-serif; font-size: 16px;
-  }
+/* ***************************************************************************** */
+                                  /* GRID LAYOUT */
+/* ***************************************************************************** */
 
-  #grid-container {
+  body {
     display: grid;
     grid-template-areas:
       'header header'
-      'menuwrapper main'
+      'nav main'
       'footer footer';
-    grid-template-columns: 3fr 7fr;
+    grid-template-columns: 15fr 85fr;
     }
 
-  body > div > header {
+  body > header {
     background-color: darkslategray;
     color: wheat;
     grid-area: header;
 
   }
 
-  #container {
-    grid-area: container;
+  body > nav {
+    background-color: darkslateblue;
+    grid-area: nav;
   }
 
+  body > main {
+    background-color: deepskyblue;
+    grid-area: main;
+  }
 
-  #index_h2 {
+  body > footer {
+    background-color: darkslategrey;
+    grid-area: footer;
+  }
+
+  /* ***************************************************************************** */
+                                      /* HEADER */
+  /* ***************************************************************************** */
+
+  body > header {
     margin: 0;
     padding: 8px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
   }
 
-/* ***************************************************************************** */
-                                  /* ALL QUESTIONS */
-/* ***************************************************************************** */
 
-  .content {
-    display: grid;
-  }
 
-  .question {
-    border: 2px solid #ccc;
-    width: 300px;
-    min-height: 32px;
-    padding: 8px;
-    display: flex;
-    line-height: 20px;
-    margin-bottom: 12px;
-  }
 
-  .correct_answer {
-    border: 2px solid #ccc;
-    width: 250px;
-    min-height: 32px;
-    padding: 8px;
-    display: flex;
-    line-height: 20px;
-    margin-bottom: 12px;
-  }
+  /* ***************************************************************************** */
+                                      /* NAVBAR */
+  /* ***************************************************************************** */
+  
+body > nav > ul{
+  float: left;
+  margin-right: 10px;
+  position: relative;
+  margin-bottom: 62px;
+}
 
-  .alt_ans_1 {
-    border: 2px solid #ccc;
-    width: 250px;
-    min-height: 32px;
-    padding: 8px;
-    display: flex;
-    line-height: 20px;
-    margin-bottom: 12px;
-  }
+#menuwrapper > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-  .alt_ans_2 {
-    border: 2px solid #ccc;
-    width: 250px;
-    min-height: 32px;
-    padding: 8px;
-    display: flex;
-    line-height: 20px;
-    margin-bottom: 12px;
-  }
+#menuwrapper > ul > li {
+  background-color: wheat;
+  border-bottom: solid 1px white;
+  width: 150px;
+  cursor: pointer;
+}
 
-  .alt_ans_3 {
-    border: 2px solid #ccc;
-    width: 250px;
-    min-height: 32px;
-    padding: 8px;
-    display: flex;
-    line-height: 20px;
-    margin-bottom: 12px;
-  }
+#menuwrapper > ul > li:hover {
+  background-color: lightgray;
+  position: relative;
+}
 
-  .difficulty {
-    border: 2px solid #ccc;
-    width: 80px;
-    min-height: 32px;
-    padding: 8px;
-    display: flex;
-    line-height: 20px;
-    margin-bottom: 12px;
-  }
+#menuwrapper ul > li > a {
+  padding: 5px 15px;
+  color: #124C78;
+  display: inline-block;
+  text-decoration: none;
+}
 
-  .topic {
-    border: 2px solid #ccc;
-    width: 150px;
-    min-height: 32px;
-    padding: 8px;
-    display: flex;
-    line-height: 20px;
-    margin-bottom: 12px;
-  }
+#menuwrapper > ul > li > ul {
+  position: absolute;
+  display: none;
+}
 
 /* ***************************************************************************** */
                                       /* FOOTER */
 /* ***************************************************************************** */
 
-  body > div > footer {
-    background-color: darkslategrey;
-    grid-area: footer;
-  }
+body > div > footer > ul {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  color: wheat;
+}
 
-  body > div > footer > ul {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    color: wheat;
-  }
+body > div > footer > ul > li {
+  padding: 16px;
+}
 
-  body > div > footer > ul > li {
-    padding: 16px;
-  }
-
-  body > div > footer > ul > li > a{
-    color: white;
-  }
+body > div > footer > ul > li > a{
+  color: white;
+}
 
 
 
+
+
+
+
+
+
+
+/* ***************************************************************************** */
+                                  /* ALL QUESTIONS */
+/* ***************************************************************************** */
+
+.content {
+  display: grid;
+}
+
+.question {
+  border: 2px solid #ccc;
+  width: 300px;
+  min-height: 32px;
+  padding: 8px;
+  display: flex;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.correct_answer {
+  border: 2px solid #ccc;
+  width: 250px;
+  min-height: 32px;
+  padding: 8px;
+  display: flex;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.alt_ans_1 {
+  border: 2px solid #ccc;
+  width: 250px;
+  min-height: 32px;
+  padding: 8px;
+  display: flex;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.alt_ans_2 {
+  border: 2px solid #ccc;
+  width: 250px;
+  min-height: 32px;
+  padding: 8px;
+  display: flex;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.alt_ans_3 {
+  border: 2px solid #ccc;
+  width: 250px;
+  min-height: 32px;
+  padding: 8px;
+  display: flex;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.difficulty {
+  border: 2px solid #ccc;
+  width: 80px;
+  min-height: 32px;
+  padding: 8px;
+  display: flex;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.topic {
+  border: 2px solid #ccc;
+  width: 150px;
+  min-height: 32px;
+  padding: 8px;
+  display: flex;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
