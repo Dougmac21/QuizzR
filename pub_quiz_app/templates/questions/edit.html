@@ -46,12 +46,23 @@
         </select>
         <br>
 
-        <label for="topic_id">Topic:</label>
+        <label for="topic_id">Question Topic:</label>
         <select id="topic_id" name="topic_id">
             <option selected value="{{  question.topic.id  }}">{{  question.topic.name  }}</option>
             {%  for topic in all_topics  %}
             {%  if question.topic.name != topic.name  %}
                 <option value="{{  topic.id  }}">{{  topic.name  }}</option>
+            {%  endif  %}
+            {%  endfor  %}
+        </select>
+        <br>
+
+        <label for="user_topic_id">User Topic:</label>
+        <select id="user_topic_id" name="user_topic_id">
+            <option selected value="{{  question.user_topic.id  }}">{{  question.user_topic.name  }}</option>
+            {%  for user_topic in all_user_topics  %}
+            {%  if question.user_topic.name != user_topic.name  %}
+                <option value="{{  user_topic.id  }}">{{  user_topic.name  }}</option>
             {%  endif  %}
             {%  endfor  %}
         </select>

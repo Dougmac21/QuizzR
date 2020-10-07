@@ -6,7 +6,6 @@
 <h2>Questions</h2>
 
 {%  for question in all_questions  %}
-
 <div class="question">
     <div class="content">
         {{  question.the_question  }}
@@ -64,6 +63,15 @@
 <div class="topic">
     <div class="content">
         {{  question.topic.name  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for question in all_questions  %}
+<div class="user_topic">
+    <div class="content">
+        {{  question.user_topic.name  }}
     </div>
 </div>
 {%  endfor  %}

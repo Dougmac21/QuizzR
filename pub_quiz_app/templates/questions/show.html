@@ -11,6 +11,7 @@
     <p>Alternate Answer 3: {{  question.alt_ans_3  }}</p>
     <p>Difficulty Level: {{  question.difficulty.level  }}</p>
     <p>Question Topic: {{  question.topic.name  }}</p>
+    <p>User Topic: {{  question.user_topic.name  }}</p>
     <br>
     <form action="/questions/{{  question.id  }}/edit" method="GET">
         <input type="submit" class="edit" value="Edit Question">
