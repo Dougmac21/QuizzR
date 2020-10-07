@@ -29,9 +29,17 @@
 
         <label for="difficulty_id">Difficulty:</label>
         <select id="difficulty_id" name="difficulty_id">
-            <option selected value="{{  question.difficulty.id  }}">{{  question.difficulty.level  }}</option>
+
             {%  for difficulty in all_difficulties  %}
-            {% if question.difficulty.level != difficulty.level %}
+            {%  if difficulty.level == "MIXED"  %}
+            <option disabled value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
+            {%  endif  %}
+            {%  endfor  %}
+
+            <option selected value="{{  question.difficulty.id  }}">{{  question.difficulty.level  }}</option>
+            
+            {%  for difficulty in all_difficulties  %}
+            {% if question.difficulty.level != difficulty.level  %}
                 <option value="{{  difficulty.id  }}">{{  difficulty.level  }}</option>
             {% endif %}
             {%  endfor  %}

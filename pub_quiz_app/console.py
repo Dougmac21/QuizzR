@@ -52,7 +52,7 @@ topic_repository.save(topic_08)
 
 
 
-difficulty_0 = Difficulty("MIXED")
+quesion_difficulty_0 = Difficulty("MIXED")
 difficulty_repository.save(difficulty_0)
 
 difficulty_1 = Difficulty("EASY")
