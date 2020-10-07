@@ -100,8 +100,11 @@
     background-color: darkslategrey;
   }
 
-  body > footer > p {
-    padding: 16px;
+  body > footer > ul {
+    list-style: none;
     color: wheat;
-    text-align: center;
+  }
+
+  body > footer > ul > a{
+    color: white;
   }
