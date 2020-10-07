@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{%  block content  %}
+
+<h2>Add A User Topic</h2>
+
+<form action="/user_topics" method="POST">
+
+    <div>
+        <label for="name">User Topic Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <input type="submit">
+    </div>
+
+</form>
+
+{%  endblock  %}

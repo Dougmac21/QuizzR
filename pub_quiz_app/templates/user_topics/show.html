@@ -1,0 +1,16 @@
+{%  extends 'base.html'  %}
+
+{%  block content  %}
+
+<div>
+    <hr>
+    <p>User Topic: {{  user_topic.name  }}</p>
+    <br>
+    <form action="/user_topics/{{  user_topic.id  }}/edit" method="GET">
+        <input type="submit" class="edit" value="Edit User Topic">
+    </form>
+    <hr>
+</div>
+
+{%  endblock  %}
+

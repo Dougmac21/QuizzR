@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{%  block content  %}
+
+
+<h2>User Topics</h2>
+
+{%  for user_topic in all_user_topics  %}
+
+<div class="user_topic">
+    <div class="content">
+        {{  user_topic.name  }}
+    </div>
+</div>
+{%  endfor  %}
+<br>
+
+{%  for user_topic in all_user_topics  %}
+<div>
+    <form action="/user_topics/{{  user_topic.id  }}" method="GET">
+        <input type="submit" class="show" value="Select User Topic">
+    </form>
+</div>
+{%  endfor  %}
+<br>
+
+{%  endblock  %}

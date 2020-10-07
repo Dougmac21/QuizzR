@@ -1,6 +1,6 @@
 from flask import Blueprint, Flask, redirect, render_template, request
 
-from models.topic import Topic
+from models.user_topic import UserTopic
 import repositories.user_topic_repository as user_topic_repository
 
 user_topics_blueprint = Blueprint("user_topics", __name__)
