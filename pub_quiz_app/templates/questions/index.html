@@ -87,7 +87,7 @@
     <br>
 
     {%  for question in all_questions  %}
-    <div>
+    <div class="delete_button">
         <form action="/questions/{{  question.id  }}/delete" method="POST">
             <input type="submit" class="delete" value="Delete Question">
         </form>

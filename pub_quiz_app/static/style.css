@@ -25,7 +25,7 @@
       'header header'
       'nav main'
       'footer footer';
-    grid-template-columns: 15fr 85fr;
+    grid-template-columns: 10fr 90fr;
     }
 
   body > header {
@@ -105,6 +105,12 @@ body > nav > ul{
   display: none;
 }
 
+#menuwrapper > ul > li:hover > ul {
+  left: 150px;
+  top: 0px;
+  display: block;
+}
+
 /* ***************************************************************************** */
                                       /* FOOTER */
 /* ***************************************************************************** */
@@ -177,46 +183,56 @@ body > main {
                                   /* ALL QUESTIONS */
 /* ***************************************************************************** */
 
-.all_questions {
+#all_questions > h2 {
+  text-align: center;
+}
+
+#all_questions {
   display: grid;
   grid-template-areas:
-    'question correct_answer alt_ans_1 alt_ans_2 alt_ans_3'
-    'question difficulty, topic, user_topic, edit_button'
-  grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
-  }
+  
 
-#question {
+  grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
+
+
+}
+
+.question {
   grid-area: question;
 }
 
-#correct_answer {
+.correct_answer {
   grid-area: correct_answer;
 }
 
-#alt_ans_1 {
+.alt_ans_1 {
   grid-area: alt_ans_1;
 }
 
-#alt_ans_2 {
+.alt_ans_2 {
   grid-area: alt_ans_2;
 }
 
-#alt_ans_3 {
+.alt_ans_3 {
   grid-area: alt_ans_3;
 }
 
-#difficulty {
+.difficulty {
   grid-area: difficulty;
 }
 
-#topic {
+.topic {
   grid-area: topic;
 }
 
-#user_topic {
+.user_topic {
   grid-area: user_topic;
 }
 
-#select_button {
+.select_button {
   grid-area: select_button;
+}
+
+.delete_button {
+  grid-area: delete_button;
 }
