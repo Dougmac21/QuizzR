@@ -3,6 +3,7 @@ import unittest
 from models.question import Question
 from models.quiz import Quiz
 from models.topic import Topic
+from models.user_topic import UserTopic
 from models.difficulty import Difficulty
 
 class DifficultyTest(unittest.TestCase):

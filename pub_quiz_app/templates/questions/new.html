@@ -53,6 +53,15 @@ You must put answers which are incorrect into the alternate answer fields.
         </select>
         <br>
 
+        <label for="user_topic">User Topic:</label>
+        <select name="user_topic" id="user_topic_id">
+            <option selected disabled>--Select--</option>
+            {%  for user_topic in all_user_topics  %}
+            <option value="{{  user_topic.id  }}">{{  user_topic.name  }}</option>
+            {%  endfor  %}
+        </select>
+        <br>
+
         <input type="submit" class="create" value="Create Question">
 
     </div>
