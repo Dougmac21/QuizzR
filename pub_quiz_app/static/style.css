@@ -21,6 +21,7 @@
 
   body > article {
     display: grid;
+    grid min-height: 100vh;
     grid-template-areas:
       'header header'
       'nav main'
