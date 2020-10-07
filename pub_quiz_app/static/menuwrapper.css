@@ -1,0 +1,62 @@
+/* ***************************************************************************** */
+                                      /* NAVBAR */
+/* ***************************************************************************** */
+  
+
+#menuwrapper {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    margin-bottom: 62px;
+    grid-area: menuwrapper;
+  }
+  
+  #menuwrapper li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  /* Apply background color and border bottom white and width to 150px */
+  #menuwrapper li {
+    background-color: #EEEEEE;
+    border-bottom: solid 1px white;
+    width: 150px;
+    cursor: pointer;
+  }
+  
+  /* Apply the background hover color when user hovers over of the li component */
+  #menuwrapper li:hover {
+    background-color: lightgray;
+    position: relative;
+  }
+  
+  /* Apply the link style */
+  #menuwrapper li a {
+    padding: 5px 15px;
+    color: #124C78;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  /**** SECOND LEVEL MENU ****/
+  /* Make the position to absolute for flyout menu and hide the ul until the user hovers the parent li item */
+  #menuwrapper li ul {
+    position: absolute;
+    display: none;
+  }
+  
+  /* *************************************************** */
+  
+    nav > ul {
+      list-style: none;
+      color: wheat;
+    }
+  
+    nav > ul >li {
+  
+    }
+  
+    nav > ul > li > a {
+      color: white;
+    }

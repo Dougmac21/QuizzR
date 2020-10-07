@@ -10,34 +10,24 @@
     font-family: "Helvetica Neue", arial, sans-serif; font-size: 16px;
   }
 
-  body > header {
+  #grid-container {
+    display: grid;
+    grid-template-areas:
+      'header header'
+      'menuwrapper main'
+      'footer footer';
+    grid-template-columns: 3fr 7fr;
+    }
+
+  body > div > header {
     background-color: darkslategray;
     color: wheat;
-  }
-
-
-/* ***************************************************************************** */
-                                      /* NAVBAR */
-/* ***************************************************************************** */
-  
-
-  .menu {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
-
-  nav > ul {
-    list-style: none;
-    color: wheat;
-  }
-
-  nav > ul >li {
+    grid-area: header;
 
   }
 
-  nav > ul > li > a {
-    color: white;
+  #container {
+    grid-area: container;
   }
 
 
@@ -130,11 +120,12 @@
                                       /* FOOTER */
 /* ***************************************************************************** */
 
-  body > footer {
+  body > div > footer {
     background-color: darkslategrey;
+    grid-area: footer;
   }
 
-  body > footer > ul {
+  body > div > footer > ul {
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -144,10 +135,13 @@
     color: wheat;
   }
 
-  body > footer > ul > li {
+  body > div > footer > ul > li {
     padding: 16px;
   }
 
-  body > footer > ul > li > a{
+  body > div > footer > ul > li > a{
     color: white;
   }
+
+
+
