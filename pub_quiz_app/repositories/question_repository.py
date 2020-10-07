@@ -28,10 +28,10 @@ def select(id):
     difficulty = difficulty_repository.select(result["difficulty_id"])
     topic = topic_repository.select(result["topic_id"])
     user_topic = user_topic_repository.select(result["user_topic_id"])
-    
+
     
     if result is not None:
-        question = Question(result["the_question"], result["correct_answer"], result["alt_ans_1"], result["alt_ans_2"], result["alt_ans_3"], difficulty, topic, result["used"], result["id"])
+        question = Question(result["the_question"], result["correct_answer"], result["alt_ans_1"], result["alt_ans_2"], result["alt_ans_3"], difficulty, topic, user_topic, result["used"], result["id"])
     return question
 
 
@@ -43,7 +43,8 @@ def select_all():
     for result in results:
         difficulty = difficulty_repository.select(result["difficulty_id"])
         topic = topic_repository.select(result["topic_id"])
-        question = Question(result["the_question"], result["correct_answer"], result["alt_ans_1"], result["alt_ans_2"], result["alt_ans_3"], difficulty, topic, result["used"], result["id"])
+        user_topic = user_topic_repository.selet(result["user_topic_id"])
+        question = Question(result["the_question"], result["correct_answer"], result["alt_ans_1"], result["alt_ans_2"], result["alt_ans_3"], difficulty, topic, user_topic, result["used"], result["id"])
         questions.append(question)
     return questions
 
@@ -63,6 +64,6 @@ def delete_all():
 
 #update                     can remove used if errors occur?
 def update(question):
-    sql = "UPDATE questions SET (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty_id, topic_id, used) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty.id, question.topic.id, question.used, question.id]
+    sql = "UPDATE questions SET (the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty_id, topic_id, user_topic_id, used) = (%s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [question.the_question, question.correct_answer, question.alt_ans_1, question.alt_ans_2, question.alt_ans_3, question.difficulty.id, question.topic.id, question.user_topic.id, question.used, question.id]
     run_sql(sql, values)
