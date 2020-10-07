@@ -3,6 +3,9 @@ from flask import Blueprint, Flask, redirect, render_template, request
 from models.topic import Topic
 import repositories.topic_repository as topic_repository
 
+from models.user_topic import UserTopic
+import repositories.user_topic_repository as user_topic_repository
+
 from models.difficulty import Difficulty
 import repositories.difficulty_repository as difficulty_repository
 
@@ -24,8 +27,9 @@ def all_questions():
 def new_question():
     questions = question_repository.select_all()
     topics = topic_repository.select_all()
+    user_topics = user_topic_repository.select_all()
     difficulties = difficulty_repository.select_all()
-    return render_template("/questions/new.html", all_questions=questions, all_topics=topics, all_difficulties=difficulties)
+    return render_template("/questions/new.html", all_questions=questions, all_topics=topics, all_user_topics=user_topics, all_difficulties=difficulties)
 
 
 #create
@@ -43,9 +47,12 @@ def create_question():
     topic_id = request.form["topic"]
     topic = topic_repository.select(topic_id)
 
+    user_topic_id = request.form["user_topic"]
+    user_topic = user_topic_repository.select(user_topic_id)
+
     used = False
 
-    new_question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, used)
+    new_question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, user_topic, used)
     question_repository.save(new_question)
     return redirect("/questions")
 
@@ -55,8 +62,9 @@ def create_question():
 def edit_question(id):
     question = question_repository.select(id)
     topics = topic_repository.select_all()
+    user_topics = user_topic_repository.select_all()
     difficulties = difficulty_repository.select_all()
-    return render_template('/questions/edit.html', question=question, all_topics=topics, all_difficulties=difficulties)
+    return render_template('/questions/edit.html', question=question, all_topics=topics, all_user_topics=user_topics, all_difficulties=difficulties)
 
 
 #update
@@ -74,9 +82,12 @@ def update_question(id):
     topic_id = request.form["topic_id"]
     topic = topic_repository.select(topic_id)
 
+    user_topic_id = request.form["user_topic_id"]
+    user_topic = user_topic_repository.select(user_topic_id)
+
     used = None
 
-    question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, used, id)
+    question = Question(the_question, correct_answer, alt_ans_1, alt_ans_2, alt_ans_3, difficulty, topic, user_topic, used, id)
     question_repository.update(question)
 
     return redirect("/questions")
