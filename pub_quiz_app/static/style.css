@@ -11,8 +11,20 @@
   }
 
   body > header {
-    background-color: darkslategrey;
+    background-color: darkslategray;
     color: wheat;
+  }
+
+
+/* ***************************************************************************** */
+                                      /* NAVBAR */
+/* ***************************************************************************** */
+  
+
+  .menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
   }
 
   nav > ul {
@@ -20,10 +32,29 @@
     color: wheat;
   }
 
-  nav > ul > a {
+  nav > ul >li {
+
+  }
+
+  nav > ul > li > a {
     color: white;
   }
 
+
+  #index_h2 {
+    margin: 0;
+    padding: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+  }
+
+/* ***************************************************************************** */
+                                  /* ALL QUESTIONS */
+/* ***************************************************************************** */
+
+  .content {
+    display: grid;
+  }
 
   .question {
     border: 2px solid #ccc;
@@ -95,16 +126,28 @@
     margin-bottom: 12px;
   }
 
+/* ***************************************************************************** */
+                                      /* FOOTER */
+/* ***************************************************************************** */
 
   body > footer {
     background-color: darkslategrey;
   }
 
   body > footer > ul {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     list-style: none;
     color: wheat;
   }
 
-  body > footer > ul > a{
+  body > footer > ul > li {
+    padding: 16px;
+  }
+
+  body > footer > ul > li > a{
     color: white;
   }
