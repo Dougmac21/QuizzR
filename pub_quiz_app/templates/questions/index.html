@@ -2,97 +2,99 @@
 
 {%  block content  %}
 
+<section id="all_questions">
+    <h2>Questions</h2>
 
-<h2>Questions</h2>
-
-{%  for question in all_questions  %}
-<div class="question">
-    <div class="content">
-        {{  question.the_question  }}
+    {%  for question in all_questions  %}
+    <div class="question">
+        <div class="content">
+            {{  question.the_question  }}
+        </div>
     </div>
-</div>
-{%  endfor  %}
-<br>
+    {%  endfor  %}
+    <br>
 
-{%  for question in all_questions  %}
-<div class="correct_answer">
-    <div class="content">
-        {{  question.correct_answer  }}
+    {%  for question in all_questions  %}
+    <div class="correct_answer">
+        <div class="content">
+            {{  question.correct_answer  }}
+        </div>
     </div>
-</div>
-{%  endfor  %}
-<br>
+    {%  endfor  %}
+    <br>
 
-{%  for question in all_questions  %}
-<div class="alt_ans_1">
-    <div class="content">
-        {{  question.alt_ans_1  }}
+    {%  for question in all_questions  %}
+    <div class="alt_ans_1">
+        <div class="content">
+            {{  question.alt_ans_1  }}
+        </div>
     </div>
-</div>
-{%  endfor  %}
-<br>
+    {%  endfor  %}
+    <br>
 
-{%  for question in all_questions  %}
-<div class="alt_ans_2">
-    <div class="content">
-        {{  question.alt_ans_2  }}
+    {%  for question in all_questions  %}
+    <div class="alt_ans_2">
+        <div class="content">
+            {{  question.alt_ans_2  }}
+        </div>
     </div>
-</div>
-{%  endfor  %}
-<br>
+    {%  endfor  %}
+    <br>
 
-{%  for question in all_questions  %}
-<div class="alt_ans_3">
-    <div class="content">
-        {{  question.alt_ans_3  }}
+    {%  for question in all_questions  %}
+    <div class="alt_ans_3">
+        <div class="content">
+            {{  question.alt_ans_3  }}
+        </div>
     </div>
-</div>
-{%  endfor  %}
-<br>
+    {%  endfor  %}
+    <br>
 
-{%  for question in all_questions  %}
-<div class="difficulty">
-    <div class="content">
-        {{  question.difficulty.level  }}
+    {%  for question in all_questions  %}
+    <div class="difficulty">
+        <div class="content">
+            {{  question.difficulty.level  }}
+        </div>
     </div>
-</div>
-{%  endfor  %}
-<br>
+    {%  endfor  %}
+    <br>
 
-{%  for question in all_questions  %}
-<div class="topic">
-    <div class="content">
-        {{  question.topic.name  }}
+    {%  for question in all_questions  %}
+    <div class="topic">
+        <div class="content">
+            {{  question.topic.name  }}
+        </div>
     </div>
-</div>
-{%  endfor  %}
-<br>
+    {%  endfor  %}
+    <br>
 
-{%  for question in all_questions  %}
-<div class="user_topic">
-    <div class="content">
-        {{  question.user_topic.name  }}
+    {%  for question in all_questions  %}
+    <div class="user_topic">
+        <div class="content">
+            {{  question.user_topic.name  }}
+        </div>
     </div>
-</div>
-{%  endfor  %}
-<br>
+    {%  endfor  %}
+    <br>
 
-{%  for question in all_questions  %}
-<div>
-    <form action="/questions/{{  question.id  }}" method="GET">
-        <input type="submit" class="show" value="Select Question">
-    </form>
-</div>
-{%  endfor  %}
-<br>
+    {%  for question in all_questions  %}
+    <div class="select_button">
+        <form action="/questions/{{  question.id  }}" method="GET">
+            <input type="submit" class="show" value="Select Question">
+        </form>
+    </div>
+    {%  endfor  %}
+    <br>
 
-{%  for question in all_questions  %}
-<div>
-    <form action="/questions/{{  question.id  }}/delete" method="POST">
-        <input type="submit" class="delete" value="Delete Question">
-    </form>
-</div>
-{%  endfor  %}
-<br>
+    {%  for question in all_questions  %}
+    <div>
+        <form action="/questions/{{  question.id  }}/delete" method="POST">
+            <input type="submit" class="delete" value="Delete Question">
+        </form>
+    </div>
+    {%  endfor  %}
+    <br>
+
+</section>
 
 {%  endblock  %}

@@ -2,22 +2,22 @@
 
 {%  block content  %}
 
-<div>
-    <hr>
-    <p>Question: {{  question.the_question  }}</p>
-    <p>Correct Answer: {{  question.correct_answer  }}</p>
-    <p>Alternate Answer 1: {{  question.alt_ans_1  }}</p>
-    <p>Alternate Answer 2: {{  question.alt_ans_2  }}</p>
-    <p>Alternate Answer 3: {{  question.alt_ans_3  }}</p>
-    <p>Difficulty Level: {{  question.difficulty.level  }}</p>
-    <p>Question Topic: {{  question.topic.name  }}</p>
-    <p>User Topic: {{  question.user_topic.name  }}</p>
-    <br>
-    <form action="/questions/{{  question.id  }}/edit" method="GET">
+<section id="show_question">
+
+    <p id="question">Question: {{  question.the_question  }}</p>
+    <p id="correct_answer">Correct Answer: {{  question.correct_answer  }}</p>
+    <p id="alt_ans_1">Alternate Answer 1: {{  question.alt_ans_1  }}</p>
+    <p id="alt_ans_2">Alternate Answer 2: {{  question.alt_ans_2  }}</p>
+    <p id="alt_ans_3">Alternate Answer 3: {{  question.alt_ans_3  }}</p>
+    <p id="difficulty">Difficulty Level: {{  question.difficulty.level  }}</p>
+    <p id="topic">Question Topic: {{  question.topic.name  }}</p>
+    <p id="user_topic">User Topic: {{  question.user_topic.name  }}</p>
+
+    <form id="edit_button" action="/questions/{{  question.id  }}/edit" method="GET">
         <input type="submit" class="edit" value="Edit Question">
     </form>
-    <hr>
-</div>
+
+</section>
 
 {%  endblock  %}
 
