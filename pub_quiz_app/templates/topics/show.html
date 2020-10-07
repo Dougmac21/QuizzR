@@ -3,14 +3,13 @@
 {%  block content  %}
 
 <div>
-    {%  for topic in all_topics  %}
-    <div class="topic_name">
-        <div class="content">
-            {{  topic.name  }}
-        </div>
-    </div>
-    {%  endfor  %}
+    <hr>
+    <p>Topic: {{  topic.name  }}</p>
     <br>
+    <form action="/topics/{{  topic.id  }}/edit" method="GET">
+        <input type="submit" class="edit" value="Edit Topic">
+    </form>
+    <hr>
 </div>
 
 {%  endblock  %}

@@ -61,3 +61,11 @@ def update(quiz):
     sql = "UPDATE quizzes SET (date, number_of_questions, difficulty, topic, question_list) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [quiz.date, quiz.number_of_questions, quiz.difficulty.id, quiz.topic.id, quiz.question_list, quiz.id]
     run_sql(sql, values)
+
+
+#generate
+# def generate():
+#     sql_questions = "SELECT * FROM questions"
+#     sql_quizzes = "SELECT * FROM quizzes"
+#     results = run_sql(sql_questions, sql_quizzes)
+#     for result in results:

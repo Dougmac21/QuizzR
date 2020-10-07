@@ -12,8 +12,16 @@
         {{  topic.name  }}
     </div>
 </div>
+{%  endfor  %}
 <br>
 
+{%  for topic in all_topics  %}
+<div>
+    <form action="/topics/{{  topic.id  }}" method="GET">
+        <input type="submit" class="show" value="Select Topic">
+    </form>
+</div>
 {%  endfor  %}
+<br>
 
 {%  endblock  %}

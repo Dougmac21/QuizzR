@@ -46,7 +46,7 @@ def update_topic(id):
 
 
 #show
-@topics_blueprint.route("/topics/<id>" methods=["GET"])
+@topics_blueprint.route("/topics/<id>", methods=["GET"])
 def show_topic(id):
     topic = topic_repository.select(id)
     return render_template('/topics/show.html', topic=topic)
