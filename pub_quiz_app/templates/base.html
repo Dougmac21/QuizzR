@@ -7,61 +7,65 @@
         <title>DougsQuiz</title>
     </head>
 
-    <body class="container">
-    
-        <header class="item item-1" id="base_header">
-            <h1>DougsQuiz: Quiz Management Made Simple.</h1>
-        </header>
-        <hr>
+    <body>
 
-        <nav class="item item-2" id="menuwrapper">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li class="item_with_submenu"><a href="#">Questions</a>
-                    <ul class="submenu">
-                        <li class="subitem"><a href="/questions">Question Archive</a></li>
-                        <li class="subitem"><a href="/questions/new">Add Question</a></li>
-                    </ul>
-                </li>                
+        <article class="container">
 
-                <li class="item_with_submenu"><a href="#">Main Topics</a>
-                    <ul class="submenu">
-                        <li class="subitem"><a href="/topics">See Topics</a></li>
-                        <li class="subitem"><a href="/topics/new">Add Topic</a></li>
-                    </ul>
-                </li>
+            <header class="item item-1" id="base_header">
+                <h1>DougsQuiz: Quiz Management Made Simple.</h1>
+            </header>
+            <hr>
 
-                <li class="item_with_submenu"><a href="#">User Topics</a>
-                    <ul class="submenu">
-                        <li class="subitem"><a href="/user_topics">See Topics</a></li>
-                        <li class="subitem"><a href="/user_topics/new">Add Topic</a></li>
-                    </ul>
-                </li>
+            <nav class="item item-2" id="menuwrapper">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="item_with_submenu"><a href="#">Questions</a>
+                        <ul class="submenu">
+                            <li class="subitem"><a href="/questions">Question Archive</a></li>
+                            <li class="subitem"><a href="/questions/new">Add Question</a></li>
+                        </ul>
+                    </li>                
 
-                <li class="item_with_submenu"><a href="#">Quizzes</a>
-                    <ul class="submenu">
-                        <li class="subitem"><a href="/quizzes">Quiz Archive</a></li>
-                        <li class="subitem"><a href="/quizzes/new">Create Quiz</a></li>
-                    </ul>
-                </li>
+                    <li class="item_with_submenu"><a href="#">Main Topics</a>
+                        <ul class="submenu">
+                            <li class="subitem"><a href="/topics">See Topics</a></li>
+                            <li class="subitem"><a href="/topics/new">Add Topic</a></li>
+                        </ul>
+                    </li>
 
-            </ul>
-        </nav>
-        <hr>
+                    <li class="item_with_submenu"><a href="#">User Topics</a>
+                        <ul class="submenu">
+                            <li class="subitem"><a href="/user_topics">See Topics</a></li>
+                            <li class="subitem"><a href="/user_topics/new">Add Topic</a></li>
+                        </ul>
+                    </li>
 
-        <main class="item item-3" id="block-content">
-            {%  block content  %}
+                    <li class="item_with_submenu"><a href="#">Quizzes</a>
+                        <ul class="submenu">
+                            <li class="subitem"><a href="/quizzes">Quiz Archive</a></li>
+                            <li class="subitem"><a href="/quizzes/new">Create Quiz</a></li>
+                        </ul>
+                    </li>
 
-            {%  endblock  %}
-        </main>
+                </ul>
+            </nav>
+            <hr>
 
-        <footer class="item item-4" id="base_footer">
-            <ul>
-                <li><a href="/about.html">About Us</a></li>
-                <li><a href="/contact.html">Contact Us</a></li>
-                <li><a href="/privacy.html">Privacy Policy</a></li>
-            </ul>
-        </footer>
-    
+            <main class="item item-3" id="block-content">
+                {%  block content  %}
+
+                {%  endblock  %}
+            </main>
+
+            <footer class="item item-4" id="base_footer">
+                <ul>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                </ul>
+            </footer>
+
+        </article>
+
     </body>
 </html>

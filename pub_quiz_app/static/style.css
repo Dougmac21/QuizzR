@@ -19,7 +19,7 @@
                                   /* GRID LAYOUT */
 /* ***************************************************************************** */
 
-  body {
+  body > article {
     display: grid;
     grid-template-areas:
       'header header'
@@ -28,25 +28,25 @@
     grid-template-columns: 10fr 90fr;
     }
 
-  body > header {
+  body > article > header {
     background-color: darkslategray;
     color: wheat;
     grid-area: header;
-
   }
 
-  body > nav {
+  body > article > nav {
     background-color: wheat;
     grid-area: nav;
   }
 
-  body > main {
+  body > article > main {
     background-color: white;
     grid-area: main;
   }
 
-  body > footer {
+  body > article > footer {
     background-color: darkslategrey;
+    color: wheat;
     grid-area: footer;
   }
 
@@ -54,7 +54,7 @@
                                       /* HEADER */
   /* ***************************************************************************** */
 
-  body > header {
+  body > article > header {
     margin: 0;
     padding: 8px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -68,11 +68,11 @@
                                       /* NAVBAR */
   /* ***************************************************************************** */
   
-body > nav > ul{
+body > article > nav > ul{
   float: left;
-  margin-right: 10px;
+  margin-right: 8px;
   position: relative;
-  margin-bottom: 62px;
+  margin-bottom: 58px;
 }
 
 #menuwrapper > ul {
@@ -103,9 +103,11 @@ body > nav > ul{
 #menuwrapper > ul > li > ul {
   position: absolute;
   display: none;
+  list-style: none;
 }
 
 #menuwrapper > ul > li:hover > ul {
+  background-color: wheat;
   left: 150px;
   top: 0px;
   display: block;
@@ -115,7 +117,8 @@ body > nav > ul{
                                       /* FOOTER */
 /* ***************************************************************************** */
 
-body > footer > ul {
+
+body > article > footer > ul {
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -125,12 +128,12 @@ body > footer > ul {
   color: wheat;
 }
 
-body > footer > ul > li {
+body > article > footer > ul > li {
   padding: 16px;
 }
 
-body > footer > ul > li > a{
-  color: white;
+body > article > footer > ul > li > a{
+  color: wheat;
 }
 
 
@@ -139,7 +142,7 @@ body > footer > ul > li > a{
                                   /* index.html */
 /* ***************************************************************************** */
 
-body > main {
+body > article > main {
   text-align: center;
 }
 
@@ -150,7 +153,7 @@ body > main {
                                   /* about.html */
 /* ***************************************************************************** */
 
-body > main {
+body > article > main {
   text-align: center;
 }
 
@@ -161,7 +164,7 @@ body > main {
                                   /* contact.html */
 /* ***************************************************************************** */
 
-body > main {
+body > article > main {
   text-align: center;
 }
 
@@ -172,7 +175,7 @@ body > main {
                                   /* privacy.html */
 /* ***************************************************************************** */
 
-body > main {
+body > article > main {
   text-align: center;
 }
 
@@ -183,7 +186,7 @@ body > main {
                                   /* ALL QUESTIONS */
 /* ***************************************************************************** */
 
-#all_questions > h2 {
+/* #all_questions > h2 {
   text-align: center;
 }
 
@@ -235,4 +238,4 @@ body > main {
 
 .delete_button {
   grid-area: delete_button;
-}
+} */
