@@ -17,9 +17,8 @@ import repositories.quiz_repository as quiz_repository
 
 
 
-
-topic_repository.delete_all()
 user_topic_repository.delete_all()
+topic_repository.delete_all()
 difficulty_repository.delete_all()
 question_repository.delete_all()
 quiz_repository.delete_all()
