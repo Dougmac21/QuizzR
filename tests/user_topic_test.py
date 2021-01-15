@@ -17,5 +17,5 @@ class UserTopicTest(unittest.TestCase):
         self.assertEqual("Test User_Topic", self.user_topic.name)
 
     def test_new_user_topic_added(self):
-        self.user_topic_1 = UserTopic("Anthropology")
-        self.assertEqual("Anthropology", self.user_topic_1.name)
+        self.user_topic_1 = UserTopic("Everton Football Club")
+        self.assertEqual("Everton Football Club", self.user_topic_1.name)
